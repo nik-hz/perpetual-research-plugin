@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="sigil" width="100%"/>
+</p>
+
 # sigil
 
 > Hash-anchored provenance comments for code edited by AI agents.
