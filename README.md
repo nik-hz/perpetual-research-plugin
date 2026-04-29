@@ -2,6 +2,8 @@
 
 > Hash-anchored provenance comments for code edited by AI agents.
 
+Plugin that automatically tags and indexes codebases as code agents work on them, building a useful representation and indexing capability. This skill lets agents find their way around dirs without needing humans to force them to use a structure, letting them learn on their own what they find important, what notes and fun facts they find.
+
 When Claude Code edits a Python function, **sigil** stamps a small comment above it:
 
 ```python
@@ -89,12 +91,12 @@ The format itself is implementation-agnostic — see [SPEC.md](SPEC.md) for the 
 
 ## CLI reference
 
-| command | purpose |
-| --- | --- |
-| `sig init` | snapshot every `.py` file in the project into the sidecar; doesn't insert any in-source comments |
-| `sig list [--drifted]` | list tracked symbols with drift status |
-| `sig drift` | print drifted symbols, exit `1` if any drift, `0` otherwise |
-| `sig show <symbol_id>` | dump the full sidecar record for one symbol as JSON |
+| command                | purpose                                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------ |
+| `sig init`             | snapshot every `.py` file in the project into the sidecar; doesn't insert any in-source comments |
+| `sig list [--drifted]` | list tracked symbols with drift status                                                           |
+| `sig drift`            | print drifted symbols, exit `1` if any drift, `0` otherwise                                      |
+| `sig show <symbol_id>` | dump the full sidecar record for one symbol as JSON                                              |
 
 `<symbol_id>` is `<rel_path>::<dotted.symbol>` — for example, `data/filters.py::DataFilter.apply`.
 
