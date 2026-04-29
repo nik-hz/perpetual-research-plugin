@@ -22,6 +22,19 @@ That comment records *who* edited the function, *when*, and a content hash of th
 
 ---
 
+## Quickstart
+
+Run this directly in the Claude Code terminal to activate sigil in your project — updates with `/plugin update sigil@nik-hz`:
+
+```text
+/plugin marketplace add nik-hz/sigil
+/plugin install sigil@nik-hz
+```
+
+That wires up the auto-stamping hook. For local development, optional CLI access (`sig drift`, `sig list`, etc.), and other install paths, see [Install](#install) below.
+
+---
+
 ## Why?
 
 `git blame` answers "who last touched this line" at the commit level. Sigil answers a different question:
@@ -56,7 +69,7 @@ When humans and AI agents share a codebase, that signal is hard to recover from 
 - Python 3.10+
 - [Claude Code](https://claude.com/claude-code)
 
-### Pick one
+### Options
 
 **A. From GitHub** — recommended for normal use. Survives machine moves; updates with `/plugin update sigil@nik-hz`.
 
@@ -83,6 +96,17 @@ claude --plugin-dir /path/to/sigil
 ```
 
 To remove later: `/plugin uninstall sigil@nik-hz`, and optionally `/plugin marketplace remove nik-hz` to drop the marketplace registration.
+
+### `sig` on your shell PATH (optional)
+
+The plugin's hooks invoke the bundled `sig` automatically — no PATH setup is required for stamping or drift surfacing to work. If you also want to run `sig init`, `sig drift`, or `sig list` from your shell, point PATH at the bundled binary:
+
+```sh
+git clone https://github.com/nik-hz/sigil ~/code/sigil    # if you don't already have a clone
+export PATH="$HOME/code/sigil/bin:$PATH"                  # add to your shell rc to persist
+```
+
+Or alias it: `alias sig="$HOME/code/sigil/bin/sig"`.
 
 ---
 
