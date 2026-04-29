@@ -213,18 +213,18 @@
       "sigil_timestamp": null
     },
     "src/sigil/hook.py::hook_post_tool": {
-      "body_hash": "b99923ef",
+      "body_hash": "a099f2d8",
       "file": "src/sigil/hook.py",
       "language": "python",
       "line_range": [
         17,
         50
       ],
-      "sigil_agent": null,
-      "sigil_hash": null,
-      "sigil_present": false,
-      "sigil_role": null,
-      "sigil_timestamp": null
+      "sigil_agent": "claude-code-292be15c",
+      "sigil_hash": "a099f2d8",
+      "sigil_present": true,
+      "sigil_role": "hook_post_tool",
+      "sigil_timestamp": "2026-04-29T19:56:29Z"
     },
     "src/sigil/hook.py::hook_session_start": {
       "body_hash": "7e03872d",
@@ -815,18 +815,18 @@
       "sigil_timestamp": null
     },
     "src/sigil/store.py::update_for_file": {
-      "body_hash": "ea48f22b",
+      "body_hash": "c00c1cb6",
       "file": "src/sigil/store.py",
       "language": "python",
       "line_range": [
-        53,
-        102
+        54,
+        121
       ],
-      "sigil_agent": null,
-      "sigil_hash": null,
-      "sigil_present": false,
-      "sigil_role": null,
-      "sigil_timestamp": null
+      "sigil_agent": "claude-code-292be15c",
+      "sigil_hash": "c00c1cb6",
+      "sigil_present": true,
+      "sigil_role": "update_for_file",
+      "sigil_timestamp": "2026-04-29T19:56:21Z"
     }
   },
   "version": "0.1"

@@ -14,6 +14,7 @@ from sigil.sidecar import Sidecar, drift_status, refresh_sidecar
 from sigil.store import find_project_root, update_for_file
 
 
+# @sig a099f2d8 | role: hook_post_tool | by: claude-code-292be15c | at: 2026-04-29T19:56:29Z
 def hook_post_tool() -> None:
     """PostToolUse handler. Reads the Claude Code JSON payload from stdin."""
     try:
@@ -44,7 +45,7 @@ def hook_post_tool() -> None:
     agent_id = f"claude-code-{session_id}"
 
     try:
-        update_for_file(root, file_path, agent_id)
+        update_for_file(root, file_path, agent_id, stamp_new=True)
     except Exception as e:
         click.echo(f"sigil hook: {type(e).__name__}: {e}", err=True)
     sys.exit(0)

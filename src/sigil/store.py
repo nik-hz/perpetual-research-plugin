@@ -50,7 +50,8 @@ _EXT_TO_LANG = {
 }
 
 
-def update_for_file(root: Path, file_path: Path, agent_id: str) -> dict:
+# @sig c00c1cb6 | role: update_for_file | by: claude-code-292be15c | at: 2026-04-29T19:56:21Z
+def update_for_file(root: Path, file_path: Path, agent_id: str, stamp_new: bool = False) -> dict:
     sidecar = Sidecar(root)
     rel = str(file_path.resolve().relative_to(root.resolve()))
 
@@ -69,8 +70,26 @@ def update_for_file(root: Path, file_path: Path, agent_id: str) -> dict:
         prev = sidecar.data["symbols"].get(rec.symbol_id)
 
         if prev is None:
-            sidecar.upsert(rec.symbol_id, _record_from_existing(rel, rec, language))
-            summary["snapshotted"].append(rec.symbol_id)
+            if stamp_new:
+                # Agent is creating this function — stamp it immediately.
+                role = rec.symbol_id.split("::", 1)[1].split(".")[-1]
+                line_text = format_sigil_line(rec.body_hash, role, agent_id, ts, prefix=adapter.comment_prefix)
+                sigils_to_write[rec.symbol_id] = line_text
+                sidecar.upsert(rec.symbol_id, {
+                    "file": rel,
+                    "language": language,
+                    "line_range": list(rec.line_range),
+                    "body_hash": rec.body_hash,
+                    "sigil_present": True,
+                    "sigil_hash": rec.body_hash,
+                    "sigil_role": role,
+                    "sigil_agent": agent_id,
+                    "sigil_timestamp": ts,
+                })
+                summary["stamped"].append(rec.symbol_id)
+            else:
+                sidecar.upsert(rec.symbol_id, _record_from_existing(rel, rec, language))
+                summary["snapshotted"].append(rec.symbol_id)
             continue
 
         if prev["body_hash"] == rec.body_hash:
