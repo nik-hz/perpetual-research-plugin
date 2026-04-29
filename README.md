@@ -43,7 +43,7 @@ That wires up the auto-stamping hook. For local development, optional CLI access
 - When you start a new session, has any agent-authored code drifted under you?
 - Is the function in front of you something the agent shaped, or something a human revised after?
 
-When humans and AI agents share a codebase, that signal is hard to recover from commits alone — agents tend to batch unrelated edits, and review burden grows with commit churn. Sigil gives you function-level provenance you can audit in seconds.
+Sigil keeps track of more finegrained edits within the codebase to help agents navigate.
 
 ---
 
@@ -112,17 +112,93 @@ Or alias it: `alias sig="$HOME/code/sigil/bin/sig"`.
 
 ## Use
 
-In a Python project with a `.git` at its root:
+### 1. Initialize tracking
+
+In any Python project with a `.git` root, run inside Claude Code:
+
+```
+/sig-init
+```
+
+Or from your shell (requires `sig` on PATH — see [Install](#install)):
 
 ```sh
 sig init
 ```
 
-That snapshots every existing function into `.sigil/index.json` without inserting any comments — your source stays clean. Commit `.sigil/` so provenance survives clones.
+This snapshots every Python function into `.sigil/index.json` without touching your source. Commit the `.sigil/` directory so provenance survives clones.
 
-From here, ask Claude Code to edit a function. A `# @sig …` line appears above the def. Modify a stamped function yourself without re-stamping; on the next session start, Claude is told about the drift.
+### 2. Work normally
 
-### 30-second verify
+Edit code with Claude Code as usual. The plugin handles everything automatically:
+
+- **On every edit** — the `PostToolUse` hook fires, parses the changed file, and stamps any function whose body changed with a `# @sig …` comment.
+- **On session start** — the `SessionStart` hook re-parses all tracked files and tells the agent about any functions that have drifted since the last stamp.
+
+You don't need to run any commands. The plugin is silent when nothing has changed.
+
+### 3. Understand what gets stamped
+
+When Claude edits a function, a comment like this appears above it:
+
+```python
+# @sig 7a3f2d8c | role: filter_short_completions | by: claude-code-abc12345 | at: 2026-04-29T14:32:00Z
+def filter_short_completions(samples, min_len=20):
+    ...
+```
+
+| field | meaning |
+| ----- | ------- |
+| `7a3f2d8c` | First 8 hex of the function body's normalized SHA-256 at the time of the edit |
+| `role` | Short label for what the function does (defaults to function name, can be refined) |
+| `by` | Agent identifier (`claude-code-<session_id>`) |
+| `at` | UTC timestamp of the edit |
+
+Functions without a `# @sig` comment are **tracked but unstamped** — they were snapshotted at `sig init` time and haven't been agent-edited since.
+
+### 4. Detect drift
+
+If a human edits a stamped function without re-stamping, the body hash will no longer match the recorded hash. This is **drift**.
+
+Check for drift inside Claude Code:
+
+```
+/sig-drift
+```
+
+Or from your shell:
+
+```sh
+sig drift        # exit 0 = synced, exit 1 = drift detected
+```
+
+On the next Claude Code session start, drifted functions are automatically surfaced to the agent so it knows what changed under it.
+
+### 5. Browse tracked symbols
+
+List all tracked functions and their status:
+
+```
+/sig-list
+```
+
+Or from your shell:
+
+```sh
+sig list             # all tracked symbols
+sig list --drifted   # only drifted ones
+sig show data/filters.py::DataFilter.apply   # full sidecar record as JSON
+```
+
+### 6. Investigate provenance
+
+Use the `/sigil` skill inside Claude Code to reason about sigil comments. Useful for:
+
+- **"Who last touched this function?"** — check the `by` and `at` fields in the sigil.
+- **"Is this function drifted?"** — if the current body hash differs from the sigil hash, someone edited it after the agent without re-stamping.
+- **"Was this written by an agent or a human?"** — a sigil means an agent wrote this version; drift means a human revised it afterward; no sigil means it predates agent involvement (or was snapshotted but never agent-edited).
+
+### Quick demo
 
 ```sh
 mkdir /tmp/sigil-demo && cd /tmp/sigil-demo && git init -q
