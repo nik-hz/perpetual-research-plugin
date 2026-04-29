@@ -95,7 +95,35 @@ git clone https://github.com/nik-hz/sigil ~/code/sigil
 claude --plugin-dir /path/to/sigil
 ```
 
-To remove later: `/plugin uninstall sigil@nik-hz`, and optionally `/plugin marketplace remove nik-hz` to drop the marketplace registration.
+### Updating
+
+```text
+/plugin update sigil@nik-hz
+```
+
+This pulls the latest version from the GitHub marketplace. After updating, run `/reload-plugins` or start a new session for changes to take effect.
+
+If you installed from a local clone (option B), pull the latest changes instead:
+
+```sh
+cd ~/code/sigil && git pull
+```
+
+Local-clone changes are picked up on the next Claude Code session. For per-session installs (option C), just point `--plugin-dir` at the updated checkout.
+
+### Uninstalling
+
+```text
+/plugin uninstall sigil@nik-hz
+```
+
+Optionally remove the marketplace registration too:
+
+```text
+/plugin marketplace remove nik-hz
+```
+
+This removes the plugin and hooks. Your `.sigil/` directory and any `# @sig` comments in source files are left untouched — they're inert without the plugin.
 
 ### `sig` on your shell PATH (optional)
 
@@ -271,6 +299,28 @@ The `bin/sig` script also exposes `sig hook post-tool` and `sig hook session-sta
 - Concurrent edits across processes (no file-level lock yet)
 
 Full list: [SPEC.md §7](SPEC.md#7-limitations-and-non-goals).
+
+---
+
+## Troubleshooting
+
+**Plugin loads but hooks don't fire**
+Run `/reload-plugins` and check the output includes `2 hooks`. If not, verify the plugin is enabled: `/plugin` should show `sigil@nik-hz` as active. Check `.claude/settings.local.json` isn't overriding with `"sigil@nik-hz": false`.
+
+**`sig` command not found**
+The hooks don't need `sig` on your PATH — they use the bundled binary. If you want to run `sig` from your shell, see [sig on your PATH](#sig-on-your-shell-path-optional).
+
+**`uv` not found**
+The `sig` script requires [`uv`](https://docs.astral.sh/uv/). Install it:
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**0 symbols snapshotted on `sig init`**
+Sigil only tracks Python files (`.py`). Make sure you're running from a directory that contains Python source. Also check that the project root has a `.git` directory — sigil uses it to locate the project boundary.
+
+**Sigils aren't appearing after edits**
+Sigils are only stamped on functions whose bodies actually changed. Whitespace-only edits, decorator changes, and comment-only edits are intentionally ignored (see [SPEC.md §3](SPEC.md)).
 
 ---
 

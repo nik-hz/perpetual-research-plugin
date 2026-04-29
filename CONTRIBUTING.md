@@ -26,7 +26,31 @@ chmod +x bin/sig
 ./bin/sig --help          # uv resolves deps on first run
 ```
 
+To test your local changes inside Claude Code, use the per-session install:
+
+```sh
+claude --plugin-dir /path/to/sigil
+```
+
+Or register your local clone as a marketplace source:
+
+```text
+/plugin marketplace add ~/code/sigil
+/plugin install sigil@nik-hz
+```
+
+Changes are picked up on the next Claude Code session (or after `/reload-plugins`).
+
 For a smoke test, see the recipe at the bottom of the [README](README.md).
+
+## Versioning
+
+Version numbers live in two places:
+
+- `.claude-plugin/plugin.json` — the version Claude Code sees
+- `.claude-plugin/marketplace.json` — the marketplace version
+
+Bump both when cutting a release. The sidecar format version (`"version"` in `.sigil/index.json`) is governed by [SPEC.md](SPEC.md) and should only be bumped for breaking schema changes with a documented migration path.
 
 ## Reporting security issues
 
