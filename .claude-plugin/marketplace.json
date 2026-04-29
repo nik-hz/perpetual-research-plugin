@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "nik-hz",
+  "description": "Sigil — auto-stamped provenance comments for Python functions edited by Claude Code.",
+  "version": "0.1.0",
+  "owner": {
+    "name": "nik-hz"
+  },
+  "plugins": [
+    {
+      "name": "sigil",
+      "source": "./",
+      "description": "Stamps Python functions with hash-anchored provenance comments when Claude Code edits them, and surfaces drift to the agent on session start.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "sigil",
+  "description": "Stamps Python functions with hash-anchored sigil comments when Claude Code edits them, and surfaces drift to the agent on session start.",
+  "version": "0.1.0",
+  "keywords": ["provenance", "drift-detection", "python", "sigil"]
+}
