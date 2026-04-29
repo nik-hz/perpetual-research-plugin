@@ -11,11 +11,6 @@
       <stop offset="80%" stop-color="#5af1ff"/>
       <stop offset="100%" stop-color="#00f0ff"/>
     </linearGradient>
-    <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff2975" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ff2975" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#ff2975" stop-opacity="0.55"/>
-    </linearGradient>
     <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
       <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.06"/>
     </pattern>
@@ -28,32 +23,13 @@
   <rect width="1200" height="320" fill="url(#bg)"/>
   <rect width="1200" height="320" fill="url(#grid)"/>
 
-  <!-- synthwave horizon -->
-  <rect x="0" y="225" width="1200" height="95" fill="url(#horizon)"/>
-  <line x1="0" y1="225" x2="1200" y2="225" stroke="#ff2975" stroke-width="1.5" opacity="0.7"/>
-
-  <!-- vanishing-point grid lines (perspective) -->
-  <g stroke="#ff2975" stroke-width="0.8" opacity="0.4">
-    <line x1="600" y1="225" x2="0"    y2="320"/>
-    <line x1="600" y1="225" x2="200"  y2="320"/>
-    <line x1="600" y1="225" x2="400"  y2="320"/>
-    <line x1="600" y1="225" x2="800"  y2="320"/>
-    <line x1="600" y1="225" x2="1000" y2="320"/>
-    <line x1="600" y1="225" x2="1200" y2="320"/>
-  </g>
-  <g stroke="#ff2975" stroke-width="0.6" opacity="0.35">
-    <line x1="0" y1="245" x2="1200" y2="245"/>
-    <line x1="0" y1="270" x2="1200" y2="270"/>
-    <line x1="0" y1="298" x2="1200" y2="298"/>
-  </g>
-
   <!-- SIGIL wordmark, centered -->
-  <text x="606" y="221" text-anchor="middle"
+  <text x="606" y="246" text-anchor="middle"
         font-family="Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
         font-size="240" font-weight="900"
         fill="#ff2975" opacity="0.4"
         letter-spacing="10">SIGIL</text>
-  <text x="600" y="215" text-anchor="middle"
+  <text x="600" y="240" text-anchor="middle"
         font-family="Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
         font-size="240" font-weight="900"
         fill="url(#title)"
