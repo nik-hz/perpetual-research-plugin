@@ -1,6 +1,833 @@
 {
-  "last_full_scan": "2026-04-29T17:48:22Z",
+  "last_full_scan": "2026-04-29T19:50:14Z",
   "project_root": "/fastpool/research/sigil",
-  "symbols": {},
+  "symbols": {
+    "src/sigil/cli.py::_hook_post_tool": {
+      "body_hash": "58b68365",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        104,
+        107
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::_hook_session_start": {
+      "body_hash": "af724553",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        111,
+        114
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::cli": {
+      "body_hash": "490233cf",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        18,
+        19
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::drift": {
+      "body_hash": "6cb27e70",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        69,
+        82
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::hook": {
+      "body_hash": "c00e2f68",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        99,
+        100
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::init": {
+      "body_hash": "10a61611",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        24,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::list_cmd": {
+      "body_hash": "d3142e0d",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        55,
+        65
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::main": {
+      "body_hash": "cba42cf3",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        117,
+        118
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/cli.py::show": {
+      "body_hash": "1bd84d91",
+      "file": "src/sigil/cli.py",
+      "language": "python",
+      "line_range": [
+        87,
+        95
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::compute_hash": {
+      "body_hash": "bd4d36ee",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        40,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::format_sigil_line": {
+      "body_hash": "4acf40d0",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        63,
+        66
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::normalize_body": {
+      "body_hash": "82f74aa2",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        30,
+        37
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::now_iso": {
+      "body_hash": "5651745b",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        44,
+        45
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::parse_sigil_line": {
+      "body_hash": "c93deb29",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        48,
+        60
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/format.py::sigil_re": {
+      "body_hash": "5d4ec7d3",
+      "file": "src/sigil/format.py",
+      "language": "python",
+      "line_range": [
+        16,
+        23
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/hook.py::hook_post_tool": {
+      "body_hash": "b99923ef",
+      "file": "src/sigil/hook.py",
+      "language": "python",
+      "line_range": [
+        17,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/hook.py::hook_session_start": {
+      "body_hash": "7e03872d",
+      "file": "src/sigil/hook.py",
+      "language": "python",
+      "line_range": [
+        53,
+        98
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/__init__.py::_build_registry": {
+      "body_hash": "7ab8f430",
+      "file": "src/sigil/languages/__init__.py",
+      "language": "python",
+      "line_range": [
+        13,
+        24
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/__init__.py::get_adapter": {
+      "body_hash": "9bc42c7f",
+      "file": "src/sigil/languages/__init__.py",
+      "language": "python",
+      "line_range": [
+        27,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/__init__.py::supported_extensions": {
+      "body_hash": "4a15a0bf",
+      "file": "src/sigil/languages/__init__.py",
+      "language": "python",
+      "line_range": [
+        35,
+        40
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/base.py::LanguageAdapter.parse": {
+      "body_hash": "ab8e2a5f",
+      "file": "src/sigil/languages/base.py",
+      "language": "python",
+      "line_range": [
+        27,
+        27
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/base.py::LanguageAdapter.write_sigils": {
+      "body_hash": "e8c8c331",
+      "file": "src/sigil/languages/base.py",
+      "language": "python",
+      "line_range": [
+        28,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/base.py::treesitter_write_sigils": {
+      "body_hash": "572ae4a6",
+      "file": "src/sigil/languages/base.py",
+      "language": "python",
+      "line_range": [
+        31,
+        81
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/go.py::GoAdapter.parse": {
+      "body_hash": "377ce8e0",
+      "file": "src/sigil/languages/go.py",
+      "language": "python",
+      "line_range": [
+        78,
+        86
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/go.py::GoAdapter.write_sigils": {
+      "body_hash": "17a18657",
+      "file": "src/sigil/languages/go.py",
+      "language": "python",
+      "line_range": [
+        88,
+        89
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/go.py::_get_parser": {
+      "body_hash": "8abf34b5",
+      "file": "src/sigil/languages/go.py",
+      "language": "python",
+      "line_range": [
+        13,
+        19
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/go.py::_record_function": {
+      "body_hash": "4977bb85",
+      "file": "src/sigil/languages/go.py",
+      "language": "python",
+      "line_range": [
+        59,
+        71
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/go.py::_walk_functions": {
+      "body_hash": "33658569",
+      "file": "src/sigil/languages/go.py",
+      "language": "python",
+      "line_range": [
+        22,
+        56
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::PythonAdapter.parse": {
+      "body_hash": "01f3e461",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        97,
+        103
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::PythonAdapter.write_sigils": {
+      "body_hash": "26cc57e6",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        105,
+        113
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Updater.__init__": {
+      "body_hash": "92931061",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        55,
+        58
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Updater.leave_ClassDef": {
+      "body_hash": "6cf90aa2",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        64,
+        66
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Updater.leave_FunctionDef": {
+      "body_hash": "f118643d",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        72,
+        90
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Updater.visit_ClassDef": {
+      "body_hash": "29e9aeb9",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        60,
+        62
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Updater.visit_FunctionDef": {
+      "body_hash": "d4d85a32",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        68,
+        70
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Visitor.__init__": {
+      "body_hash": "c5e9f8c5",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        17,
+        20
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Visitor.leave_ClassDef": {
+      "body_hash": "2890e391",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        25,
+        26
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Visitor.leave_FunctionDef": {
+      "body_hash": "5fefb88b",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        50,
+        51
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Visitor.visit_ClassDef": {
+      "body_hash": "c9f782a2",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        22,
+        23
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/python.py::_Visitor.visit_FunctionDef": {
+      "body_hash": "b3d24864",
+      "file": "src/sigil/languages/python.py",
+      "language": "python",
+      "line_range": [
+        28,
+        48
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/rust.py::RustAdapter.parse": {
+      "body_hash": "c8171beb",
+      "file": "src/sigil/languages/rust.py",
+      "language": "python",
+      "line_range": [
+        64,
+        72
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/rust.py::RustAdapter.write_sigils": {
+      "body_hash": "17a18657",
+      "file": "src/sigil/languages/rust.py",
+      "language": "python",
+      "line_range": [
+        74,
+        75
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/rust.py::_get_parser": {
+      "body_hash": "49232a32",
+      "file": "src/sigil/languages/rust.py",
+      "language": "python",
+      "line_range": [
+        13,
+        19
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/rust.py::_walk_functions": {
+      "body_hash": "bb5612b6",
+      "file": "src/sigil/languages/rust.py",
+      "language": "python",
+      "line_range": [
+        22,
+        57
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/typescript.py::TypeScriptAdapter.parse": {
+      "body_hash": "38f2c2b1",
+      "file": "src/sigil/languages/typescript.py",
+      "language": "python",
+      "line_range": [
+        108,
+        116
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/typescript.py::TypeScriptAdapter.write_sigils": {
+      "body_hash": "17a18657",
+      "file": "src/sigil/languages/typescript.py",
+      "language": "python",
+      "line_range": [
+        118,
+        119
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/typescript.py::_get_parser": {
+      "body_hash": "f99b0bbb",
+      "file": "src/sigil/languages/typescript.py",
+      "language": "python",
+      "line_range": [
+        16,
+        34
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/typescript.py::_record_function": {
+      "body_hash": "3ca12a99",
+      "file": "src/sigil/languages/typescript.py",
+      "language": "python",
+      "line_range": [
+        83,
+        101
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/languages/typescript.py::_walk_functions": {
+      "body_hash": "40edfe12",
+      "file": "src/sigil/languages/typescript.py",
+      "language": "python",
+      "line_range": [
+        38,
+        80
+      ],
+      "sigil_agent": "claude-code-292be15c",
+      "sigil_hash": "40edfe12",
+      "sigil_present": true,
+      "sigil_role": "_walk_functions",
+      "sigil_timestamp": "2026-04-29T19:49:38Z"
+    },
+    "src/sigil/sidecar.py::Sidecar.__init__": {
+      "body_hash": "3b52d763",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        14,
+        17
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/sidecar.py::Sidecar._load": {
+      "body_hash": "a11ab722",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        19,
+        22
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/sidecar.py::Sidecar.save": {
+      "body_hash": "f64319c0",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        24,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/sidecar.py::Sidecar.upsert": {
+      "body_hash": "312f5efa",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        30,
+        31
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/sidecar.py::drift_status": {
+      "body_hash": "7702adb9",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        34,
+        39
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/sidecar.py::refresh_sidecar": {
+      "body_hash": "2c1788eb",
+      "file": "src/sigil/sidecar.py",
+      "language": "python",
+      "line_range": [
+        42,
+        69
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/store.py::_record_from_existing": {
+      "body_hash": "214f929b",
+      "file": "src/sigil/store.py",
+      "language": "python",
+      "line_range": [
+        28,
+        40
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/store.py::find_project_root": {
+      "body_hash": "dd5a41b0",
+      "file": "src/sigil/store.py",
+      "language": "python",
+      "line_range": [
+        15,
+        20
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/store.py::is_ignored": {
+      "body_hash": "a1d1be46",
+      "file": "src/sigil/store.py",
+      "language": "python",
+      "line_range": [
+        23,
+        25
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/sigil/store.py::update_for_file": {
+      "body_hash": "ea48f22b",
+      "file": "src/sigil/store.py",
+      "language": "python",
+      "line_range": [
+        53,
+        102
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    }
+  },
   "version": "0.1"
 }

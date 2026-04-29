@@ -1,10 +1,10 @@
 ---
-description: Initialize sigil tracking for the current project by snapshotting all Python functions
+description: Initialize sigil tracking for the current project by snapshotting all functions in supported languages (Python, TS/JS, Go, Rust)
 ---
 
 Run `${CLAUDE_PLUGIN_ROOT}/bin/sig init` from the current project root and report the result.
 
-This snapshots all Python functions into `.sigil/index.json` without inserting any in-source comments. It is safe to re-run — only new (untracked) symbols are added.
+This snapshots all functions in supported languages (`.py`, `.ts`, `.tsx`, `.js`, `.jsx`, `.go`, `.rs`) into `.sigil/index.json` without inserting any in-source comments. It is safe to re-run — only new (untracked) symbols are added.
 
 After running, tell the user:
 - How many symbols were snapshotted

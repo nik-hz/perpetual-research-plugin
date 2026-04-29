@@ -6,16 +6,23 @@
 
 > Hash-anchored provenance comments for code edited by AI agents.
 
-**Status:** v0.1 — Python only, Claude Code only. The on-disk format is harness- and language-agnostic ([SPEC.md](SPEC.md)); more adapters are on the [roadmap](#roadmap).
+**Status:** v0.2 — Python, TypeScript/JavaScript, Go, and Rust. Claude Code only. The on-disk format is harness- and language-agnostic ([SPEC.md](SPEC.md)); more adapters are on the [roadmap](#roadmap).
 
 Plugin that automatically tags and indexes codebases as code agents work on them, building a useful representation and indexing capability. This skill lets agents find their way around dirs without needing humans to force them to use a structure, letting them learn on their own what they find important, what notes and fun facts they find.
 
-When Claude Code edits a Python function, **sigil** stamps a small comment above it:
+When Claude Code edits a function, **sigil** stamps a small comment above it:
 
 ```python
 # @sig 7a3f2d8c | role: filter_short_completions | by: claude-code-abc12345 | at: 2026-04-29T14:32:00Z
 def filter_short_completions(samples, min_len=20):
     ...
+```
+
+```typescript
+// @sig 3b1e9a4f | role: filterShortCompletions | by: claude-code-abc12345 | at: 2026-04-29T14:32:00Z
+function filterShortCompletions(samples: string[], minLen = 20): string[] {
+    ...
+}
 ```
 
 That comment records *who* edited the function, *when*, and a content hash of the body. If a human later modifies the function without re-stamping, the hash mismatches — and on the next session start, sigil tells the agent: *"this function has changed since you last touched it."*
@@ -142,7 +149,7 @@ Or alias it: `alias sig="$HOME/code/sigil/bin/sig"`.
 
 ### 1. Initialize tracking
 
-In any Python project with a `.git` root, run inside Claude Code:
+In any project with a `.git` root, run inside Claude Code:
 
 ```
 /sig-init
@@ -154,7 +161,7 @@ Or from your shell (requires `sig` on PATH — see [Install](#install)):
 sig init
 ```
 
-This snapshots every Python function into `.sigil/index.json` without touching your source. Commit the `.sigil/` directory so provenance survives clones.
+This snapshots every function in supported languages (`.py`, `.ts`, `.tsx`, `.js`, `.jsx`, `.go`, `.rs`) into `.sigil/index.json` without touching your source. Commit the `.sigil/` directory so provenance survives clones.
 
 ### 2. Work normally
 
@@ -274,7 +281,7 @@ For a deeper walk-through, see [docs/control-flow.md](docs/control-flow.md). The
 
 | command                | purpose                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------ |
-| `sig init`             | snapshot every `.py` file in the project into the sidecar; doesn't insert any in-source comments |
+| `sig init`             | snapshot every supported source file (`.py`, `.ts`, `.tsx`, `.js`, `.jsx`, `.go`, `.rs`) into the sidecar; doesn't insert any in-source comments |
 | `sig list [--drifted]` | list tracked symbols with drift status                                                           |
 | `sig drift`            | print drifted symbols, exit `1` if any drift, `0` otherwise                                      |
 | `sig show <symbol_id>` | dump the full sidecar record for one symbol as JSON                                              |
@@ -288,14 +295,15 @@ The `bin/sig` script also exposes `sig hook post-tool` and `sig hook session-sta
 ## Tracking scope
 
 **Tracked**
-- Top-level Python functions
-- Class methods (including dunders)
+- Python: top-level functions, class methods (via libcst)
+- TypeScript/JavaScript: function declarations, method definitions, named arrow functions (via tree-sitter)
+- Go: function declarations, method declarations with receiver types (via tree-sitter)
+- Rust: function items, impl methods (via tree-sitter)
 
 **Not tracked (yet)**
 - Module-level constants
 - Class definitions themselves (only the methods within them)
 - Decorators (a `@cache` toggle won't trigger drift)
-- TypeScript / Rust / Go (Python only in v0.1)
 - Concurrent edits across processes (no file-level lock yet)
 
 Full list: [SPEC.md §7](SPEC.md#7-limitations-and-non-goals).
@@ -317,7 +325,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 **0 symbols snapshotted on `sig init`**
-Sigil only tracks Python files (`.py`). Make sure you're running from a directory that contains Python source. Also check that the project root has a `.git` directory — sigil uses it to locate the project boundary.
+Sigil tracks `.py`, `.ts`, `.tsx`, `.js`, `.jsx`, `.go`, and `.rs` files. Make sure you're running from a directory that contains supported source files. Also check that the project root has a `.git` directory — sigil uses it to locate the project boundary.
 
 **Sigils aren't appearing after edits**
 Sigils are only stamped on functions whose bodies actually changed. Whitespace-only edits, decorator changes, and comment-only edits are intentionally ignored (see [SPEC.md §3](SPEC.md)).
@@ -326,7 +334,10 @@ Sigils are only stamped on functions whose bodies actually changed. Whitespace-o
 
 ## Roadmap
 
-- [ ] TypeScript support (tree-sitter)
+- [x] TypeScript/JavaScript support (tree-sitter)
+- [x] Go support (tree-sitter)
+- [x] Rust support (tree-sitter)
+- [x] Package refactor (`bin/sig` → `src/sigil/`)
 - [ ] `sig watch` — harness-agnostic stamping via filesystem watcher
 - [ ] Cross-process locking on the sidecar
 - [ ] `sig update <symbol>` for refining role labels from inside the agent

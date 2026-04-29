@@ -1,6 +1,6 @@
 # Refactor plan: monofile → package
 
-Status: **deferred**. Ship v0.1 as-is. Pull this trigger when one of the conditions below is met.
+Status: **done**. Completed in v0.2 alongside multi-language support (TypeScript/JavaScript, Go, Rust via tree-sitter).
 
 ## Why
 

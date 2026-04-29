@@ -1,6 +1,6 @@
 ---
 name: sigil
-description: Read and reason about hash-anchored provenance comments (`# @sig ...`) above Python functions. Use when investigating who last touched code, distinguishing agent-edited from human-edited functions, or refining a sigil's role label.
+description: Read and reason about hash-anchored provenance comments (`# @sig ...` / `// @sig ...`) above functions in Python, TypeScript/JavaScript, Go, and Rust. Use when investigating who last touched code, distinguishing agent-edited from human-edited functions, or refining a sigil's role label.
 ---
 
 # Sigil skill
@@ -11,6 +11,13 @@ Functions in projects using this plugin carry provenance comments like:
 # @sig 7a3f2d8c | role: filter_short_completions | by: claude-code-abc12345 | at: 2026-04-29T14:32:00Z
 def filter_short_completions(samples, min_len=20):
     ...
+```
+
+```typescript
+// @sig 3b1e9a4f | role: filterShortCompletions | by: claude-code-abc12345 | at: 2026-04-29T14:32:00Z
+function filterShortCompletions(samples: string[], minLen = 20): string[] {
+    ...
+}
 ```
 
 ## Field meanings
