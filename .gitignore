@@ -12,9 +12,11 @@ venv/
 build/
 dist/
 
-# Editor / OS
+# Editor / IDE / dev environment
 .vscode/
 .idea/
+.devcontainer/
+.claude/
 *.swp
 *.swo
 .DS_Store
