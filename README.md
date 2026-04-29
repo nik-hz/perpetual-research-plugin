@@ -6,6 +6,8 @@
 
 > Hash-anchored provenance comments for code edited by AI agents.
 
+**Status:** v0.1 — Python only, Claude Code only. The on-disk format is harness- and language-agnostic ([SPEC.md](SPEC.md)); more adapters are on the [roadmap](#roadmap).
+
 Plugin that automatically tags and indexes codebases as code agents work on them, building a useful representation and indexing capability. This skill lets agents find their way around dirs without needing humans to force them to use a structure, letting them learn on their own what they find important, what notes and fun facts they find.
 
 When Claude Code edits a Python function, **sigil** stamps a small comment above it:
@@ -20,11 +22,11 @@ That comment records *who* edited the function, *when*, and a content hash of th
 
 ---
 
-## What problem does this solve?
+## Why?
 
 `git blame` answers "who last touched this line" at the commit level. Sigil answers a different question:
 
-- Which functions has any agent touched?
+- Which functions has *any* agent touched?
 - When you start a new session, has any agent-authored code drifted under you?
 - Is the function in front of you something the agent shaped, or something a human revised after?
 
@@ -43,31 +45,78 @@ When humans and AI agents share a codebase, that signal is hard to recover from 
 
 ---
 
-## Quick start
+## Install
 
-Requires `uv` and Python 3.10+ on PATH.
+### Requirements
 
-Install via Claude Code's plugin system:
+- [`uv`](https://docs.astral.sh/uv/) on PATH — the bundled `sig` CLI uses PEP 723 inline metadata; `uv` resolves its deps on first run.
+  ```sh
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- Python 3.10+
+- [Claude Code](https://claude.com/claude-code)
+
+### Pick one
+
+**A. From GitHub** — recommended for normal use. Survives machine moves; updates with `/plugin update sigil@nik-hz`.
 
 ```text
 /plugin marketplace add nik-hz/sigil
 /plugin install sigil@nik-hz
 ```
 
-Or run it directly without installing:
+**B. From a local clone** — when you're hacking on the plugin itself.
+
+```sh
+git clone https://github.com/nik-hz/sigil ~/code/sigil
+```
+
+```text
+/plugin marketplace add ~/code/sigil
+/plugin install sigil@nik-hz
+```
+
+**C. Per-session, no install** — fastest iteration loop. Plugin is active for that session only; code changes picked up next launch.
 
 ```sh
 claude --plugin-dir /path/to/sigil
 ```
 
-In your project, snapshot existing functions so the hook has a baseline:
+To remove later: `/plugin uninstall sigil@nik-hz`, and optionally `/plugin marketplace remove nik-hz` to drop the marketplace registration.
+
+---
+
+## Use
+
+In a Python project with a `.git` at its root:
 
 ```sh
-cd your-python-project
 sig init
 ```
 
-That's it. Now ask Claude Code to edit a Python function — a `# @sig …` line appears above the def. Edit one yourself without re-stamping; on the next session start the agent gets told.
+That snapshots every existing function into `.sigil/index.json` without inserting any comments — your source stays clean. Commit `.sigil/` so provenance survives clones.
+
+From here, ask Claude Code to edit a function. A `# @sig …` line appears above the def. Modify a stamped function yourself without re-stamping; on the next session start, Claude is told about the drift.
+
+### 30-second verify
+
+```sh
+mkdir /tmp/sigil-demo && cd /tmp/sigil-demo && git init -q
+cat > demo.py <<'PY'
+def add(a, b):
+    return a + b
+PY
+sig init                                  # snapshots demo.py::add
+```
+
+Open Claude Code in `/tmp/sigil-demo`, ask "extend `add` to handle strings". After it writes:
+
+```sh
+cat demo.py                               # @sig comment now above add
+sig drift                                 # exit 0 — synced
+sed -i 's/return /return  /' demo.py     # simulate human edit
+sig drift                                 # exit 1 — drift detected
+```
 
 ---
 
@@ -89,7 +138,7 @@ Claude Code edits app.py    →    PostToolUse hook fires
 
 On `SessionStart`, sigil re-parses every tracked file, compares each function's current normalized hash to its recorded sigil hash, and emits any drift to the model as `additionalContext`. If nothing has drifted, the hook is silent.
 
-The format itself is implementation-agnostic — see [SPEC.md](SPEC.md) for the comment grammar, normalization rules, sidecar JSON shape, and drift state machine.
+For a deeper walk-through, see [docs/control-flow.md](docs/control-flow.md). The on-disk format is in [SPEC.md](SPEC.md).
 
 ---
 
@@ -108,43 +157,27 @@ The `bin/sig` script also exposes `sig hook post-tool` and `sig hook session-sta
 
 ---
 
-## What's tracked
+## Tracking scope
 
+**Tracked**
 - Top-level Python functions
 - Class methods (including dunders)
-- Sidecar at `<project>/.sigil/index.json` — commit this to git so provenance survives clones
 
-## What's not tracked (yet)
-
+**Not tracked (yet)**
 - Module-level constants
 - Class definitions themselves (only the methods within them)
 - Decorators (a `@cache` toggle won't trigger drift)
 - TypeScript / Rust / Go (Python only in v0.1)
 - Concurrent edits across processes (no file-level lock yet)
 
-See [SPEC.md §7](SPEC.md#7-limitations-and-non-goals) for the full list.
-
----
-
-## Layout
-
-```
-.claude-plugin/
-  plugin.json          plugin manifest read by Claude Code
-  marketplace.json     marketplace manifest for /plugin install
-bin/sig                CLI entry point (PEP 723, runs under `uv`)
-hooks/hooks.json       PostToolUse + SessionStart hook config
-commands/              auto-discovered slash commands (/sig-drift, /sig-list)
-skills/sigil/SKILL.md  auto-discovered skill: how to read sigils
-SPEC.md                format spec (implementation-agnostic)
-README.md              you are here
-```
+Full list: [SPEC.md §7](SPEC.md#7-limitations-and-non-goals).
 
 ---
 
 ## Roadmap
 
 - [ ] TypeScript support (tree-sitter)
+- [ ] `sig watch` — harness-agnostic stamping via filesystem watcher
 - [ ] Cross-process locking on the sidecar
 - [ ] `sig update <symbol>` for refining role labels from inside the agent
 - [ ] Append-only event log alongside the sidecar
@@ -153,16 +186,16 @@ README.md              you are here
 
 ---
 
-## Why "sigil"?
+## Contributing
 
-A sigil is a mark — a small inscribed sign. The plugin scribes them above functions when an agent passes through.
+PRs welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for what makes a good PR and local development setup. The format spec is the contract — anything that writes sigils should be byte-for-byte interoperable with the reference implementation. Inbound contributions are MIT-licensed (`inbound = outbound`); no CLA required.
 
 ---
 
-## Contributing
-
-Issues and PRs welcome. The format spec is the contract; implementations may vary, but anything that writes sigils should be byte-for-byte interoperable with the reference implementation.
-
 ## License
 
-[MIT](LICENSE).
+[MIT](LICENSE) © 2026 nik-hz.
+
+---
+
+*A sigil is a mark — a small inscribed sign. The plugin scribes them above functions when an agent passes through.*
