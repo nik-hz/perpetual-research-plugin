@@ -1,0 +1,20 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.8"
+# dependencies = [
+#     "click>=8.0",
+#     "pygit2>=1.12",
+#     "lark>=1.1",
+#     "pyyaml>=6.0",
+#     "tabulate>=0.9",
+# ]
+# ///
+"""Perpetual — autonomous research agent CLI."""
+import sys
+import os
+
+# Add src/ to path so we can import perpetual
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
+
+from perpetual.cli import cli
+cli()

@@ -1,0 +1,3619 @@
+{
+  "last_full_scan": "2026-04-29T19:50:19Z",
+  "project_root": "/fastpool/research/perpetual-research-agent",
+  "symbols": {
+    "perpetual/cli/client.py::_close": {
+      "body_hash": "9bceee5c",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        68,
+        69
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::_connect": {
+      "body_hash": "0f03463d",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        39,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::_rpc_call": {
+      "body_hash": "cb05112e",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        44,
+        65
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::build_parser": {
+      "body_hash": "b53b0212",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        181,
+        197
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_attach": {
+      "body_hash": "6faf9721",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        168,
+        175
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_oneshot": {
+      "body_hash": "b8bb7122",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        149,
+        165
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_oneshot._do": {
+      "body_hash": "3b1b318c",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        154,
+        163
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_start": {
+      "body_hash": "ba7cfc4d",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        96,
+        104
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_status": {
+      "body_hash": "b5950d87",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        130,
+        146
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_status._do": {
+      "body_hash": "119442fb",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        137,
+        144
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::cmd_stop": {
+      "body_hash": "298d7559",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        107,
+        127
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::ensure_daemon": {
+      "body_hash": "f980b08e",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        75,
+        90
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::find_project_root": {
+      "body_hash": "6370acfe",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        23,
+        33
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/client.py::main": {
+      "body_hash": "1046a83e",
+      "file": "perpetual/cli/client.py",
+      "language": "python",
+      "line_range": [
+        200,
+        217
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/commands.py::_id_param": {
+      "body_hash": "71c0da84",
+      "file": "perpetual/cli/commands.py",
+      "language": "python",
+      "line_range": [
+        24,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/commands.py::_message_param": {
+      "body_hash": "735c0595",
+      "file": "perpetual/cli/commands.py",
+      "language": "python",
+      "line_range": [
+        31,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/commands.py::_no_params": {
+      "body_hash": "e85e9895",
+      "file": "perpetual/cli/commands.py",
+      "language": "python",
+      "line_range": [
+        20,
+        21
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/commands.py::parse_slash": {
+      "body_hash": "85f34070",
+      "file": "perpetual/cli/commands.py",
+      "language": "python",
+      "line_range": [
+        49,
+        64
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient.__init__": {
+      "body_hash": "093a30b0",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        28,
+        34
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient._handle_notification": {
+      "body_hash": "7470e6c4",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        91,
+        102
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient._read_loop": {
+      "body_hash": "c68c7a04",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        68,
+        89
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient.call": {
+      "body_hash": "caa4f719",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        57,
+        66
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient.connect": {
+      "body_hash": "6069110f",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        36,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::ReplClient.disconnect": {
+      "body_hash": "d3640de9",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        43,
+        55
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::_level_name": {
+      "body_hash": "9c228df5",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        105,
+        107
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::_repl_loop": {
+      "body_hash": "d579dea2",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        110,
+        157
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/cli/repl.py::run_repl": {
+      "body_hash": "8be38d78",
+      "file": "perpetual/cli/repl.py",
+      "language": "python",
+      "line_range": [
+        160,
+        162
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::_cleanup_files": {
+      "body_hash": "33a1a07b",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        174,
+        180
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "33a1a07b",
+      "sigil_present": true,
+      "sigil_role": "_cleanup_files",
+      "sigil_timestamp": "2026-04-29T20:06:11Z"
+    },
+    "perpetual/daemon/lifecycle.py::_install_signal_handlers": {
+      "body_hash": "cda5198e",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        111,
+        116
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::_run": {
+      "body_hash": "1c9543a2",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        182,
+        193
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::_shutdown_waiter": {
+      "body_hash": "c986fc7f",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        164,
+        168
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::cleanup_stale": {
+      "body_hash": "014978a0",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        66,
+        76
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::daemon_main": {
+      "body_hash": "de201a9c",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        122,
+        163
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "de201a9c",
+      "sigil_present": true,
+      "sigil_role": "daemon_main",
+      "sigil_timestamp": "2026-04-29T20:06:06Z"
+    },
+    "perpetual/daemon/lifecycle.py::daemon_main._status_handler": {
+      "body_hash": "230d991c",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        137,
+        143
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::daemonize": {
+      "body_hash": "e57e9aee",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        82,
+        105
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::is_pid_alive": {
+      "body_hash": "32022ff5",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        58,
+        63
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::log_path": {
+      "body_hash": "7ed48155",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        35,
+        36
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::perpetual_dir": {
+      "body_hash": "7fc24f02",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        23,
+        24
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::pid_path": {
+      "body_hash": "0454b9e5",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        31,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::read_pid": {
+      "body_hash": "522dd6fa",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        48,
+        55
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::sock_path": {
+      "body_hash": "e7d8a623",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        27,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/lifecycle.py::write_pid": {
+      "body_hash": "d314b8a7",
+      "file": "perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        42,
+        45
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/protocol.py::Notification.to_dict": {
+      "body_hash": "25dcbe61",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        48,
+        49
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "25dcbe61",
+      "sigil_present": true,
+      "sigil_role": "to_dict",
+      "sigil_timestamp": "2026-04-29T20:05:04Z"
+    },
+    "perpetual/daemon/protocol.py::Request.to_dict": {
+      "body_hash": "59456987",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        19,
+        25
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "59456987",
+      "sigil_present": true,
+      "sigil_role": "to_dict",
+      "sigil_timestamp": "2026-04-29T20:05:04Z"
+    },
+    "perpetual/daemon/protocol.py::Response.to_dict": {
+      "body_hash": "b08942d9",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        34,
+        40
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "b08942d9",
+      "sigil_present": true,
+      "sigil_role": "to_dict",
+      "sigil_timestamp": "2026-04-29T20:05:04Z"
+    },
+    "perpetual/daemon/protocol.py::decode": {
+      "body_hash": "1837885d",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        78,
+        80
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "1837885d",
+      "sigil_present": true,
+      "sigil_role": "decode",
+      "sigil_timestamp": "2026-04-29T20:05:13Z"
+    },
+    "perpetual/daemon/protocol.py::encode": {
+      "body_hash": "c2e3911d",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        73,
+        75
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "c2e3911d",
+      "sigil_present": true,
+      "sigil_role": "encode",
+      "sigil_timestamp": "2026-04-29T20:05:13Z"
+    },
+    "perpetual/daemon/protocol.py::make_error": {
+      "body_hash": "647ff25b",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        64,
+        68
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "647ff25b",
+      "sigil_present": true,
+      "sigil_role": "make_error",
+      "sigil_timestamp": "2026-04-29T20:05:13Z"
+    },
+    "perpetual/daemon/protocol.py::parse_message": {
+      "body_hash": "e6f578d8",
+      "file": "perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        83,
+        98
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "e6f578d8",
+      "sigil_present": true,
+      "sigil_role": "parse_message",
+      "sigil_timestamp": "2026-04-29T20:05:13Z"
+    },
+    "perpetual/daemon/server.py::Server.__init__": {
+      "body_hash": "396b5413",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        33,
+        39
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._dispatch": {
+      "body_hash": "fd9a70e0",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        125,
+        141
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_client": {
+      "body_hash": "0d3cfab4",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        87,
+        101
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_ping": {
+      "body_hash": "736fb525",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        154,
+        157
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_shutdown": {
+      "body_hash": "48874b72",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        181,
+        190
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_status": {
+      "body_hash": "d045ee25",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        159,
+        165
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_subscribe": {
+      "body_hash": "75108e67",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        167,
+        173
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._handle_unsubscribe": {
+      "body_hash": "add23276",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        175,
+        179
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._read_loop": {
+      "body_hash": "622a9bf6",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        103,
+        122
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server._register_builtins": {
+      "body_hash": "3d1e16d2",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        46,
+        51
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server.broadcast_log": {
+      "body_hash": "b777070d",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        145,
+        150
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server.register": {
+      "body_hash": "8bb30686",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        43,
+        44
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server.serve_forever": {
+      "body_hash": "a1b8195d",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        65,
+        69
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server.start": {
+      "body_hash": "0811e657",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        55,
+        63
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/server.py::Server.stop": {
+      "body_hash": "07ac11a4",
+      "file": "perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        71,
+        83
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/session.py::ClientSession.close": {
+      "body_hash": "2782b9a0",
+      "file": "perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        38,
+        43
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/session.py::ClientSession.notify": {
+      "body_hash": "67259405",
+      "file": "perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        34,
+        36
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/daemon/session.py::ClientSession.send": {
+      "body_hash": "314fbeab",
+      "file": "perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        24,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "perpetual/loop/main_loop.py::_handle_event": {
+      "body_hash": "3165e9cf",
+      "file": "perpetual/loop/main_loop.py",
+      "language": "python",
+      "line_range": [
+        45,
+        56
+      ],
+      "sigil_agent": "claude-code-c5030b92",
+      "sigil_hash": "3165e9cf",
+      "sigil_present": true,
+      "sigil_role": "_handle_event",
+      "sigil_timestamp": "2026-04-29T20:05:43Z"
+    },
+    "perpetual/loop/main_loop.py::main_loop": {
+      "body_hash": "66c4473c",
+      "file": "perpetual/loop/main_loop.py",
+      "language": "python",
+      "line_range": [
+        11,
+        42
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient.__init__": {
+      "body_hash": "093a30b0",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        152,
+        158
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient._handle_notification": {
+      "body_hash": "d83fefff",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        212,
+        222
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient._read_loop": {
+      "body_hash": "2debcacd",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        190,
+        210
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient.call": {
+      "body_hash": "9887db3f",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        180,
+        188
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient.connect": {
+      "body_hash": "94f5028c",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        160,
+        164
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ReplClient.disconnect": {
+      "body_hash": "d3640de9",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        166,
+        178
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_connect": {
+      "body_hash": "fa6cb13f",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        55,
+        57
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_ensure_daemon": {
+      "body_hash": "61143b84",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        83,
+        95
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_find_project_root": {
+      "body_hash": "b568f9d7",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        40,
+        48
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_id_param": {
+      "body_hash": "eef7b57e",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        105,
+        109
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_level_name": {
+      "body_hash": "a2c7e7fb",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        147,
+        148
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_message_param": {
+      "body_hash": "d8638850",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        111,
+        112
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_no_params": {
+      "body_hash": "d81bf578",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        102,
+        103
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_parse_slash": {
+      "body_hash": "bcb1f4e4",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        128,
+        140
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_repl_loop": {
+      "body_hash": "928bd275",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        225,
+        274
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::_rpc_call": {
+      "body_hash": "62d587bd",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        60,
+        80
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::approve": {
+      "body_hash": "afbc4a04",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        182,
+        197
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::attach": {
+      "body_hash": "4c431c1e",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        345,
+        349
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::budget": {
+      "body_hash": "63e85ed0",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        291,
+        311
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::cli": {
+      "body_hash": "42f9aaca",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        23,
+        25
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "42f9aaca",
+      "sigil_present": true,
+      "sigil_role": "cli",
+      "sigil_timestamp": "2026-04-29T22:11:32Z"
+    },
+    "src/perpetual/cli.py::ensure_init": {
+      "body_hash": "2288c675",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        16,
+        20
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::get_root": {
+      "body_hash": "39402bcc",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        7,
+        14
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::gpu_status": {
+      "body_hash": "03fc8eeb",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        314,
+        317
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::hook": {
+      "body_hash": "2f47b804",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        400,
+        402
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::hypotheses": {
+      "body_hash": "f964a559",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        106,
+        108
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::hypotheses_add": {
+      "body_hash": "f9cf649d",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        113,
+        121
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::hypotheses_list": {
+      "body_hash": "a009da69",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        125,
+        138
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::hypotheses_update": {
+      "body_hash": "94595217",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        145,
+        160
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::init": {
+      "body_hash": "4c4eb7e3",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        30,
+        60
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "4c4eb7e3",
+      "sigil_present": true,
+      "sigil_role": "init",
+      "sigil_timestamp": "2026-04-29T23:53:40Z"
+    },
+    "src/perpetual/cli.py::kill": {
+      "body_hash": "613bebbd",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        228,
+        241
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::memory": {
+      "body_hash": "fec4c179",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        356,
+        358
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::memory_list": {
+      "body_hash": "fe73bec5",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        388,
+        395
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::memory_show": {
+      "body_hash": "3fd87a6a",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        362,
+        371
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::memory_write": {
+      "body_hash": "6498eb9b",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        377,
+        384
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::procedure": {
+      "body_hash": "1c62e60f",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        322,
+        324
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::propose": {
+      "body_hash": "90c9d77d",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        166,
+        178
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::report": {
+      "body_hash": "e320f155",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        270,
+        288
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::run": {
+      "body_hash": "9273da7e",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        203,
+        224
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::scan": {
+      "body_hash": "bdb290c9",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        244,
+        267
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::session_start": {
+      "body_hash": "12cabad2",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        405,
+        408
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::show": {
+      "body_hash": "e61d6665",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        343,
+        351
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::start": {
+      "body_hash": "ef60ed6b",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        290,
+        299
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::status": {
+      "body_hash": "95039710",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        60,
+        101
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "95039710",
+      "sigil_present": true,
+      "sigil_role": "status",
+      "sigil_timestamp": "2026-04-29T22:11:32Z"
+    },
+    "src/perpetual/cli.py::status._do": {
+      "body_hash": "141a2248",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        332,
+        339
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::stop": {
+      "body_hash": "3ce45f84",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        303,
+        320
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/cli.py::verify": {
+      "body_hash": "28800407",
+      "file": "src/perpetual/cli.py",
+      "language": "python",
+      "line_range": [
+        328,
+        339
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::_cleanup_files": {
+      "body_hash": "e54b012b",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        156,
+        158
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::_install_signal_handlers": {
+      "body_hash": "753f4ea0",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        99,
+        103
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::_run": {
+      "body_hash": "1c9543a2",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        164,
+        175
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::_shutdown_waiter": {
+      "body_hash": "cbdf54dd",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        150,
+        153
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::cleanup_stale": {
+      "body_hash": "95468471",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        66,
+        73
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::daemon_main": {
+      "body_hash": "270e530b",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        109,
+        147
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::daemon_main._status_handler": {
+      "body_hash": "230d991c",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        123,
+        129
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::daemonize": {
+      "body_hash": "52bbf283",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        79,
+        93
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::is_pid_alive": {
+      "body_hash": "32022ff5",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        58,
+        63
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::log_path": {
+      "body_hash": "7ed48155",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        35,
+        36
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::perpetual_dir": {
+      "body_hash": "7fc24f02",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        23,
+        24
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::pid_path": {
+      "body_hash": "0454b9e5",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        31,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::read_pid": {
+      "body_hash": "522dd6fa",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        48,
+        55
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::sock_path": {
+      "body_hash": "e7d8a623",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        27,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/lifecycle.py::write_pid": {
+      "body_hash": "d314b8a7",
+      "file": "src/perpetual/daemon/lifecycle.py",
+      "language": "python",
+      "line_range": [
+        42,
+        45
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::Notification.to_dict": {
+      "body_hash": "5ee93b53",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        48,
+        49
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::Request.to_dict": {
+      "body_hash": "26876977",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        19,
+        25
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::Response.to_dict": {
+      "body_hash": "76af0bce",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        34,
+        40
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::decode": {
+      "body_hash": "a1def19f",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        75,
+        77
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::encode": {
+      "body_hash": "b6fe00e1",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        70,
+        72
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::make_error": {
+      "body_hash": "77a2d544",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        61,
+        65
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/protocol.py::parse_message": {
+      "body_hash": "3a509b8c",
+      "file": "src/perpetual/daemon/protocol.py",
+      "language": "python",
+      "line_range": [
+        80,
+        94
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.__init__": {
+      "body_hash": "d44f8cf6",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        32,
+        38
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._dispatch": {
+      "body_hash": "fd9a70e0",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        120,
+        136
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_client": {
+      "body_hash": "0d3cfab4",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        83,
+        97
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_ping": {
+      "body_hash": "ceedb674",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        148,
+        149
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_shutdown": {
+      "body_hash": "3ae6abf5",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        170,
+        177
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_status": {
+      "body_hash": "f527b198",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        151,
+        154
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_subscribe": {
+      "body_hash": "75108e67",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        156,
+        162
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._handle_unsubscribe": {
+      "body_hash": "add23276",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        164,
+        168
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._read_loop": {
+      "body_hash": "1f310a66",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        99,
+        118
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server._register_builtins": {
+      "body_hash": "3d1e16d2",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        45,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.broadcast_log": {
+      "body_hash": "5b9239a0",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        140,
+        144
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.register": {
+      "body_hash": "8bb30686",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        42,
+        43
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.serve_forever": {
+      "body_hash": "a1b8195d",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        63,
+        67
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.start": {
+      "body_hash": "d8ba492b",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        54,
+        61
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/server.py::Server.stop": {
+      "body_hash": "e0c795db",
+      "file": "src/perpetual/daemon/server.py",
+      "language": "python",
+      "line_range": [
+        69,
+        79
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/session.py::ClientSession.close": {
+      "body_hash": "e045722d",
+      "file": "src/perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        37,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/session.py::ClientSession.notify": {
+      "body_hash": "f9dc565b",
+      "file": "src/perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        34,
+        35
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/daemon/session.py::ClientSession.send": {
+      "body_hash": "8bea1e19",
+      "file": "src/perpetual/daemon/session.py",
+      "language": "python",
+      "line_range": [
+        24,
+        32
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/gpu.py::gpu_summary": {
+      "body_hash": "10d205d9",
+      "file": "src/perpetual/gpu.py",
+      "language": "python",
+      "line_range": [
+        48,
+        65
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/gpu.py::pick_gpu": {
+      "body_hash": "c5cb005a",
+      "file": "src/perpetual/gpu.py",
+      "language": "python",
+      "line_range": [
+        68,
+        75
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/gpu.py::query_gpus": {
+      "body_hash": "8d28339e",
+      "file": "src/perpetual/gpu.py",
+      "language": "python",
+      "line_range": [
+        9,
+        45
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.__enter__": {
+      "body_hash": "bb223416",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        16,
+        17
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.__exit__": {
+      "body_hash": "263df423",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        19,
+        21
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.__init__": {
+      "body_hash": "ed7d1537",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        8,
+        14
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._exec": {
+      "body_hash": "e594759f",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        62,
+        66
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._init_schema": {
+      "body_hash": "06a4ca5a",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        26,
+        60
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._next_experiment_id": {
+      "body_hash": "29383524",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        73,
+        81
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._next_hypothesis_id": {
+      "body_hash": "00944bb0",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        83,
+        91
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._query": {
+      "body_hash": "f4cb20bf",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        68,
+        71
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph._row_to_dict": {
+      "body_hash": "1614bdea",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        94,
+        97
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.add_experiment": {
+      "body_hash": "33f576e6",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        101,
+        109
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.add_hypothesis": {
+      "body_hash": "5e31456f",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        146,
+        153
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.budget_by_experiment": {
+      "body_hash": "4336378d",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        202,
+        207
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.close": {
+      "body_hash": "a736f312",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        23,
+        24
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.get_experiment": {
+      "body_hash": "94a82101",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        111,
+        115
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.get_hypothesis": {
+      "body_hash": "daa10744",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        155,
+        159
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.list_experiments": {
+      "body_hash": "76d8ef21",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        117,
+        122
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.list_hypotheses": {
+      "body_hash": "0378f3cb",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        161,
+        166
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.log_budget": {
+      "body_hash": "da71b114",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        190,
+        196
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.total_budget": {
+      "body_hash": "7c236772",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        198,
+        200
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.update_experiment": {
+      "body_hash": "720fa3a4",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        124,
+        142
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/graph.py::Graph.update_hypothesis": {
+      "body_hash": "e39e678d",
+      "file": "src/perpetual/graph.py",
+      "language": "python",
+      "line_range": [
+        168,
+        186
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/hook.py::find_root": {
+      "body_hash": "259b2157",
+      "file": "src/perpetual/hook.py",
+      "language": "python",
+      "line_range": [
+        19,
+        26
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/hook.py::session_start_hook": {
+      "body_hash": "706fbe2c",
+      "file": "src/perpetual/hook.py",
+      "language": "python",
+      "line_range": [
+        29,
+        141
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "706fbe2c",
+      "sigil_present": true,
+      "sigil_role": "session_start_hook",
+      "sigil_timestamp": "2026-04-29T22:57:46Z"
+    },
+    "src/perpetual/loop/main_loop.py::_handle_event": {
+      "body_hash": "74b99509",
+      "file": "src/perpetual/loop/main_loop.py",
+      "language": "python",
+      "line_range": [
+        44,
+        56
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/loop/main_loop.py::main_loop": {
+      "body_hash": "9e1fb1a4",
+      "file": "src/perpetual/loop/main_loop.py",
+      "language": "python",
+      "line_range": [
+        11,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.__init__": {
+      "body_hash": "0dae42eb",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        37,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._abs": {
+      "body_hash": "bd993cdc",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        90,
+        92
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._ensure_layout": {
+      "body_hash": "6cdd891b",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        47,
+        63
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._git_commit": {
+      "body_hash": "a1bf6ba4",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        103,
+        122
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._init_repo": {
+      "body_hash": "9eb507cf",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        65,
+        84
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._relpath": {
+      "body_hash": "fbe3e1f8",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        94,
+        96
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory._sig": {
+      "body_hash": "20bff362",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        98,
+        101
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.append": {
+      "body_hash": "6ae31bb6",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        143,
+        150
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.history": {
+      "body_hash": "e28fbd19",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        186,
+        219
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.list_files": {
+      "body_hash": "0a19ee34",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        172,
+        184
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.load_context": {
+      "body_hash": "4a98df99",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        152,
+        162
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.log_failure": {
+      "body_hash": "d0eee97c",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        164,
+        170
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.read": {
+      "body_hash": "df759989",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        128,
+        131
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/memory.py::Memory.write": {
+      "body_hash": "52e79837",
+      "file": "src/perpetual/memory.py",
+      "language": "python",
+      "line_range": [
+        133,
+        141
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::Arm.mean_reward": {
+      "body_hash": "42066eaf",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        13,
+        16
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.add_arm": {
+      "body_hash": "f7f22cc3",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        27,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.rankings": {
+      "body_hash": "8737faad",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        52,
+        65
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.select": {
+      "body_hash": "fb898e76",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        37,
+        41
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.suggest_batch": {
+      "body_hash": "00d113b9",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        67,
+        70
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.total_pulls": {
+      "body_hash": "0371e553",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        24,
+        25
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.ucb1_score": {
+      "body_hash": "7d133199",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        30,
+        35
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::UCB1Bandit.update": {
+      "body_hash": "17363cd3",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        43,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/bandit.py::from_sweep_config": {
+      "body_hash": "7091716f",
+      "file": "src/perpetual/policies/bandit.py",
+      "language": "python",
+      "line_range": [
+        72,
+        86
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/hypothesis.py::propose_experiments": {
+      "body_hash": "b38a642f",
+      "file": "src/perpetual/policies/hypothesis.py",
+      "language": "python",
+      "line_range": [
+        16,
+        49
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/hypothesis.py::rank_hypotheses": {
+      "body_hash": "ea192ab2",
+      "file": "src/perpetual/policies/hypothesis.py",
+      "language": "python",
+      "line_range": [
+        9,
+        14
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/policies/hypothesis.py::score_hypothesis": {
+      "body_hash": "5d6280fe",
+      "file": "src/perpetual/policies/hypothesis.py",
+      "language": "python",
+      "line_range": [
+        4,
+        7
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.ESCAPED_STRING": {
+      "body_hash": "ebc5455d",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        94,
+        95
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.NAME": {
+      "body_hash": "cbb96b3c",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        97,
+        98
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.NUMBER": {
+      "body_hash": "61f750b6",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        91,
+        92
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.__init__": {
+      "body_hash": "0440c04b",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        42,
+        44
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.always": {
+      "body_hash": "fb25af5d",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        46,
+        47
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.and_expr": {
+      "body_hash": "98f22697",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        58,
+        59
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.comparison": {
+      "body_hash": "a6a31bad",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        79,
+        92
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "a6a31bad",
+      "sigil_present": true,
+      "sigil_role": "comparison",
+      "sigil_timestamp": "2026-04-29T22:57:37Z"
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.never": {
+      "body_hash": "e577534e",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        49,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.not_op": {
+      "body_hash": "cff1b9f3",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        52,
+        53
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.or_expr": {
+      "body_hash": "83710c3b",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        55,
+        56
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.ref": {
+      "body_hash": "485ef1c4",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        61,
+        68
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::GuardEvaluator.value": {
+      "body_hash": "d9165452",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        70,
+        77
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::evaluate_guard": {
+      "body_hash": "5ff13e7c",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        100,
+        107
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/guards.py::parse_guard": {
+      "body_hash": "7c7c6ffd",
+      "file": "src/perpetual/procedures/guards.py",
+      "language": "python",
+      "line_range": [
+        34,
+        36
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/parser.py::dump_spec": {
+      "body_hash": "436ac716",
+      "file": "src/perpetual/procedures/parser.py",
+      "language": "python",
+      "line_range": [
+        52,
+        66
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/parser.py::parse_spec": {
+      "body_hash": "4359ade7",
+      "file": "src/perpetual/procedures/parser.py",
+      "language": "python",
+      "line_range": [
+        22,
+        50
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.__post_init__": {
+      "body_hash": "0b4c30ef",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        12,
+        14
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.advance": {
+      "body_hash": "be8f15bf",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        30,
+        43
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.force_advance": {
+      "body_hash": "9e7532b7",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        45,
+        53
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.is_terminal": {
+      "body_hash": "257074b2",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        17,
+        18
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.legal_transitions": {
+      "body_hash": "5946fe06",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        20,
+        28
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/runtime.py::ProcedureState.summary": {
+      "body_hash": "912381d8",
+      "file": "src/perpetual/procedures/runtime.py",
+      "language": "python",
+      "line_range": [
+        55,
+        64
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/procedures/verifier.py::verify_spec": {
+      "body_hash": "a7a9129c",
+      "file": "src/perpetual/procedures/verifier.py",
+      "language": "python",
+      "line_range": [
+        5,
+        61
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_active_runs": {
+      "body_hash": "8c1c4a71",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        81,
+        89
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "8c1c4a71",
+      "sigil_present": true,
+      "sigil_role": "_section_active_runs",
+      "sigil_timestamp": "2026-04-29T23:54:04Z"
+    },
+    "src/perpetual/reports.py::_section_budget": {
+      "body_hash": "28ccdd6f",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        163,
+        183
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_completed": {
+      "body_hash": "fcca3f3f",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        90,
+        108
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_failures": {
+      "body_hash": "4065f97d",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        114,
+        137
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "4065f97d",
+      "sigil_present": true,
+      "sigil_role": "_section_failures",
+      "sigil_timestamp": "2026-04-29T23:54:09Z"
+    },
+    "src/perpetual/reports.py::_section_gpu": {
+      "body_hash": "652f95f4",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        154,
+        160
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_hypotheses": {
+      "body_hash": "1fd35950",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        138,
+        151
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_memory": {
+      "body_hash": "5406a68f",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        186,
+        196
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_open_questions": {
+      "body_hash": "bf26709f",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        199,
+        201
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::_section_summary": {
+      "body_hash": "55bf7b00",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        53,
+        75
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/reports.py::generate_report": {
+      "body_hash": "1f47e75f",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        18,
+        48
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "1f47e75f",
+      "sigil_present": true,
+      "sigil_role": "generate_report",
+      "sigil_timestamp": "2026-04-29T23:53:59Z"
+    },
+    "src/perpetual/reports.py::save_report": {
+      "body_hash": "058619b1",
+      "file": "src/perpetual/reports.py",
+      "language": "python",
+      "line_range": [
+        208,
+        216
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::RunManager.__init__": {
+      "body_hash": "da36e765",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        26,
+        33
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::RunManager._watchdog": {
+      "body_hash": "ec522207",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        107,
+        169
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "ec522207",
+      "sigil_present": true,
+      "sigil_role": "_watchdog",
+      "sigil_timestamp": "2026-04-29T22:40:54Z"
+    },
+    "src/perpetual/runs.py::RunManager.get_run": {
+      "body_hash": "fbaa7a5d",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        246,
+        258
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::RunManager.kill_run": {
+      "body_hash": "108e41b7",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        214,
+        240
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::RunManager.launch_run": {
+      "body_hash": "e38d6175",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        41,
+        107
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "e38d6175",
+      "sigil_present": true,
+      "sigil_role": "launch_run",
+      "sigil_timestamp": "2026-04-29T22:57:22Z"
+    },
+    "src/perpetual/runs.py::RunManager.scan_runs": {
+      "body_hash": "80afbbec",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        177,
+        250
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "80afbbec",
+      "sigil_present": true,
+      "sigil_role": "scan_runs",
+      "sigil_timestamp": "2026-04-29T22:45:36Z"
+    },
+    "src/perpetual/runs.py::_duration_seconds": {
+      "body_hash": "f5411ab6",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        343,
+        350
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "f5411ab6",
+      "sigil_present": true,
+      "sigil_role": "_duration_seconds",
+      "sigil_timestamp": "2026-04-29T22:57:03Z"
+    },
+    "src/perpetual/runs.py::_now_iso": {
+      "body_hash": "0bec623d",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        282,
+        285
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::_parse_iso": {
+      "body_hash": "038558f0",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        330,
+        340
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::_pid_alive": {
+      "body_hash": "6675b21d",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        352,
+        359
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::_read_json": {
+      "body_hash": "dd3a789d",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        273,
+        279
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::_scan_for_failures": {
+      "body_hash": "c8eac4f7",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        390,
+        404
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "c8eac4f7",
+      "sigil_present": true,
+      "sigil_role": "_scan_for_failures",
+      "sigil_timestamp": "2026-04-29T22:57:16Z"
+    },
+    "src/perpetual/runs.py::_seconds_since": {
+      "body_hash": "5c5cd8dc",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        353,
+        363
+      ],
+      "sigil_agent": "claude-code-b7232740",
+      "sigil_hash": "5c5cd8dc",
+      "sigil_present": true,
+      "sigil_role": "_seconds_since",
+      "sigil_timestamp": "2026-04-29T22:57:03Z"
+    },
+    "src/perpetual/runs.py::_tail": {
+      "body_hash": "48e7c0ac",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        313,
+        321
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    },
+    "src/perpetual/runs.py::_write_json": {
+      "body_hash": "d3aebbc9",
+      "file": "src/perpetual/runs.py",
+      "language": "python",
+      "line_range": [
+        265,
+        270
+      ],
+      "sigil_agent": null,
+      "sigil_hash": null,
+      "sigil_present": false,
+      "sigil_role": null,
+      "sigil_timestamp": null
+    }
+  },
+  "version": "0.1"
+}

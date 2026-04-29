@@ -1,0 +1,1 @@
+"""Perpetual — autonomous research agent."""

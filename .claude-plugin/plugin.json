@@ -1,0 +1,6 @@
+{
+  "name": "perpetual",
+  "version": "0.1.0",
+  "description": "Autonomous research agent — persistent memory, experiment tracking, hypothesis-driven proposals",
+  "entrypoint": "bin/perpetual"
+}
