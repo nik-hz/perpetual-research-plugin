@@ -48,16 +48,16 @@
   </g>
 
   <!-- SIGIL wordmark, centered -->
-  <text x="604" y="174" text-anchor="middle"
+  <text x="606" y="221" text-anchor="middle"
         font-family="Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
-        font-size="148" font-weight="900"
+        font-size="240" font-weight="900"
         fill="#ff2975" opacity="0.4"
-        letter-spacing="14">SIGIL</text>
-  <text x="600" y="170" text-anchor="middle"
+        letter-spacing="10">SIGIL</text>
+  <text x="600" y="215" text-anchor="middle"
         font-family="Impact, 'Arial Black', 'Helvetica Neue', sans-serif"
-        font-size="148" font-weight="900"
+        font-size="240" font-weight="900"
         fill="url(#title)"
-        letter-spacing="14">SIGIL</text>
+        letter-spacing="10">SIGIL</text>
 
   <!-- frame scanlines -->
   <line x1="0" y1="2"   x2="1200" y2="2"   stroke="#00f0ff" stroke-width="2" opacity="0.6"/>
