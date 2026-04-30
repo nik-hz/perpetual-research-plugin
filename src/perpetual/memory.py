@@ -62,26 +62,34 @@ class Memory:
         if _HAS_GIT:
             self._init_repo(created or list(_DEFAULT_FILES))
 
+    # @sig b5f36b1d | role: _init_repo | by: claude-code-993d23b6 | at: 2026-04-30T03:27:39Z
     def _init_repo(self, seed_files):
         # type: (list[str]) -> None
         root_str = str(self._root)
-        try:
+        git_dir = self._root / ".git"
+        if git_dir.exists():
             self._repo = pygit2.Repository(root_str)
-        except pygit2.GitError:
+        else:
             self._repo = pygit2.init_repository(root_str, bare=False)
-            # stage seed files and make initial commit
-            idx = self._repo.index
-            idx.read()
-            for name in _DEFAULT_FILES:
-                fpath = self._root / name
-                if fpath.exists():
-                    idx.add(name)
-            idx.write()
-            tree_oid = idx.write_tree()
-            sig = pygit2.Signature("perpetual", "perpetual@local")
-            self._repo.create_commit(
-                "refs/heads/master", sig, sig, "init memory", tree_oid, []
-            )
+            # stage seed files and make initial commit — chdir so idx.add
+            # resolves relative paths against the new repo workdir.
+            old_cwd = os.getcwd()
+            try:
+                os.chdir(root_str)
+                idx = self._repo.index
+                idx.read()
+                for name in _DEFAULT_FILES:
+                    fpath = self._root / name
+                    if fpath.exists():
+                        idx.add(name)
+                idx.write()
+                tree_oid = idx.write_tree()
+                sig = pygit2.Signature("perpetual", "perpetual@local")
+                self._repo.create_commit(
+                    "refs/heads/master", sig, sig, "init memory", tree_oid, []
+                )
+            finally:
+                os.chdir(old_cwd)
 
     # ------------------------------------------------------------------
     # Helpers
@@ -100,26 +108,34 @@ class Memory:
             return pygit2.Signature("perpetual", "perpetual@local")
         return None
 
+    # @sig fd1b46e5 | role: _git_commit | by: claude-code-993d23b6 | at: 2026-04-30T03:14:24Z
     def _git_commit(self, paths, message):
         # type: (list[str], str) -> None
         """Stage *paths* (relative to root) and commit."""
         if not _HAS_GIT or self._repo is None:
             return
-        idx = self._repo.index
-        idx.read()
-        for p in paths:
-            idx.add(p)
-        idx.write()
-        tree_oid = idx.write_tree()
-        sig = self._sig()
-        parents = []
+        # pygit2 idx.add() resolves relative paths from the process cwd,
+        # not the repo workdir.  Temporarily chdir so paths resolve correctly.
+        old_cwd = os.getcwd()
         try:
-            parents = [self._repo.head.target]
-        except pygit2.GitError:
-            pass
-        self._repo.create_commit(
-            "refs/heads/master", sig, sig, message, tree_oid, parents
-        )
+            os.chdir(str(self._root))
+            idx = self._repo.index
+            idx.read()
+            for p in paths:
+                idx.add(p)
+            idx.write()
+            tree_oid = idx.write_tree()
+            sig = self._sig()
+            parents = []
+            try:
+                parents = [self._repo.head.target]
+            except pygit2.GitError:
+                pass
+            self._repo.create_commit(
+                "refs/heads/master", sig, sig, message, tree_oid, parents
+            )
+        finally:
+            os.chdir(old_cwd)
 
     # ------------------------------------------------------------------
     # Public API

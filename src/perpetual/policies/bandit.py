@@ -69,18 +69,20 @@ class UCB1Bandit:
         rankings = self.rankings()
         return rankings[:n]
 
-def from_sweep_config(config: dict) -> UCB1Bandit:
-    """Create a bandit from a sweep config dict.
+    # @sig 45813cad | role: from_sweep_config | by: claude-code-993d23b6 | at: 2026-04-30T03:14:40Z
+    @classmethod
+    def from_sweep_config(cls, config: dict) -> UCB1Bandit:
+        """Create a bandit from a sweep config dict.
 
-    Config format:
-    {
-        "arms": [
-            {"name": "lr-1e-3", "config": {"lr": 1e-3}},
-            {"name": "lr-1e-4", "config": {"lr": 1e-4}},
-        ]
-    }
-    """
-    bandit = UCB1Bandit()
-    for arm_cfg in config.get("arms", []):
-        bandit.add_arm(arm_cfg["name"], arm_cfg.get("config", {}))
-    return bandit
+        Config format:
+        {
+            "arms": [
+                {"name": "lr-1e-3", "config": {"lr": 1e-3}},
+                {"name": "lr-1e-4", "config": {"lr": 1e-4}},
+            ]
+        }
+        """
+        bandit = cls()
+        for arm_cfg in config.get("arms", []):
+            bandit.add_arm(arm_cfg["name"], arm_cfg.get("config", {}))
+        return bandit

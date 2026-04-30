@@ -5,11 +5,13 @@ from pathlib import Path
 
 
 class Graph:
+    # @sig 263a4b40 | role: __init__ | by: claude-code-993d23b6 | at: 2026-04-30T03:13:52Z
     def __init__(self, db_path):
         self._db_path = str(db_path)
         self._lock = threading.Lock()
         self._conn = sqlite3.connect(self._db_path, check_same_thread=False)
         self._conn.execute("PRAGMA journal_mode=WAL")
+        self._conn.execute("PRAGMA foreign_keys=ON")
         self._conn.row_factory = sqlite3.Row
         self._init_schema()
 
@@ -70,24 +72,32 @@ class Graph:
             cur = self._conn.execute(sql, params)
             return cur.fetchall()
 
+    # @sig e67b27cc | role: _query_unlocked | by: claude-code-993d23b6 | at: 2026-04-30T04:29:20Z
+    def _query_unlocked(self, sql, params=()):
+        """Query without acquiring the lock (caller must hold it)."""
+        cur = self._conn.execute(sql, params)
+        return cur.fetchall()
+
+    # @sig bc13c5d6 | role: _next_experiment_id | by: claude-code-993d23b6 | at: 2026-04-30T04:29:20Z
     def _next_experiment_id(self):
-        rows = self._query(
-            "SELECT id FROM experiments WHERE id LIKE 'exp-%' ORDER BY id DESC LIMIT 1"
+        """Must be called while holding self._lock."""
+        rows = self._query_unlocked(
+            "SELECT id FROM experiments WHERE id LIKE 'exp-%'"
         )
         if not rows:
             return "exp-001"
-        last = rows[0]["id"]
-        num = int(last.split("-")[1]) + 1
+        num = max(int(r["id"].split("-")[1]) for r in rows) + 1
         return "exp-{:03d}".format(num)
 
+    # @sig 02cb68fd | role: _next_hypothesis_id | by: claude-code-993d23b6 | at: 2026-04-30T04:29:20Z
     def _next_hypothesis_id(self):
-        rows = self._query(
-            "SELECT id FROM hypotheses WHERE id LIKE 'hyp-%' ORDER BY id DESC LIMIT 1"
+        """Must be called while holding self._lock."""
+        rows = self._query_unlocked(
+            "SELECT id FROM hypotheses WHERE id LIKE 'hyp-%'"
         )
         if not rows:
             return "hyp-001"
-        last = rows[0]["id"]
-        num = int(last.split("-")[1]) + 1
+        num = max(int(r["id"].split("-")[1]) for r in rows) + 1
         return "hyp-{:03d}".format(num)
 
     @staticmethod
@@ -98,15 +108,19 @@ class Graph:
 
     # -- Experiment CRUD --
 
+    # @sig 85f4296a | role: add_experiment | by: claude-code-993d23b6 | at: 2026-04-30T04:29:04Z
     def add_experiment(self, id=None, hypothesis_id=None, config=None, notes=""):
-        if id is None:
-            id = self._next_experiment_id()
         config_json = json.dumps(config) if config is not None else "{}"
-        self._exec(
-            "INSERT INTO experiments (id, hypothesis_id, config, notes) VALUES (?, ?, ?, ?)",
-            (id, hypothesis_id, config_json, notes),
-        )
-        return self._row_to_dict(self._query("SELECT * FROM experiments WHERE id = ?", (id,))[0])
+        with self._lock:
+            if id is None:
+                id = self._next_experiment_id()
+            self._conn.execute(
+                "INSERT INTO experiments (id, hypothesis_id, config, notes) VALUES (?, ?, ?, ?)",
+                (id, hypothesis_id, config_json, notes),
+            )
+            self._conn.commit()
+            row = self._conn.execute("SELECT * FROM experiments WHERE id = ?", (id,)).fetchone()
+        return self._row_to_dict(row)
 
     def get_experiment(self, id):
         rows = self._query("SELECT * FROM experiments WHERE id = ?", (id,))
@@ -143,14 +157,20 @@ class Graph:
 
     # -- Hypothesis CRUD --
 
+    # @sig 4813bad7 | role: add_hypothesis | by: claude-code-993d23b6 | at: 2026-04-30T04:29:36Z
     def add_hypothesis(self, id=None, claim="", prior=0.5):
-        if id is None:
-            id = self._next_hypothesis_id()
-        self._exec(
-            "INSERT INTO hypotheses (id, claim, prior) VALUES (?, ?, ?)",
-            (id, claim, prior),
-        )
-        return self._row_to_dict(self._query("SELECT * FROM hypotheses WHERE id = ?", (id,))[0])
+        if not (0.0 <= prior <= 1.0):
+            raise ValueError("prior must be between 0.0 and 1.0, got {}".format(prior))
+        with self._lock:
+            if id is None:
+                id = self._next_hypothesis_id()
+            self._conn.execute(
+                "INSERT INTO hypotheses (id, claim, prior) VALUES (?, ?, ?)",
+                (id, claim, prior),
+            )
+            self._conn.commit()
+            row = self._conn.execute("SELECT * FROM hypotheses WHERE id = ?", (id,)).fetchone()
+        return self._row_to_dict(row)
 
     def get_hypothesis(self, id):
         rows = self._query("SELECT * FROM hypotheses WHERE id = ?", (id,))
@@ -165,15 +185,20 @@ class Graph:
             rows = self._query("SELECT * FROM hypotheses")
         return [self._row_to_dict(r) for r in rows]
 
+    # @sig a783afab | role: update_hypothesis | by: claude-code-993d23b6 | at: 2026-04-30T03:13:47Z
     def update_hypothesis(self, id, **kwargs):
         if not kwargs:
             return
+        if self.get_hypothesis(id) is None:
+            raise KeyError("hypothesis not found: {}".format(id))
         allowed = {"claim", "prior", "confidence", "status", "evidence"}
         sets = []
         params = []
         for k, v in kwargs.items():
             if k not in allowed:
                 raise ValueError("invalid column: {}".format(k))
+            if k in ("prior", "confidence") and not (0.0 <= v <= 1.0):
+                raise ValueError("{} must be between 0.0 and 1.0, got {}".format(k, v))
             if k == "evidence":
                 v = json.dumps(v) if not isinstance(v, str) else v
             sets.append("{} = ?".format(k))

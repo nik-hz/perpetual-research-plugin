@@ -107,11 +107,30 @@ def status():
 
 # --- Hypotheses subgroup ---
 
+# @sig a0a86e4f | role: _sync_hypotheses_md | by: claude-code-993d23b6 | at: 2026-04-30T04:52:42Z
+def _sync_hypotheses_md(graph, root):
+    """Regenerate memory/hypotheses.md from the graph DB."""
+    from perpetual.memory import Memory
+    hyps = graph.list_hypotheses()
+    if not hyps:
+        content = "# Hypotheses\n\n_No hypotheses yet._\n"
+    else:
+        lines = ["# Hypotheses\n"]
+        for h in hyps:
+            lines.append(
+                "- **{id}** [{status}] {claim} "
+                "(prior={prior:.2f}, confidence={confidence:.2f})".format(**h)
+            )
+        content = "\n".join(lines) + "\n"
+    mem = Memory(root / "memory")
+    mem.write("hypotheses.md", content, "sync hypotheses")
+
 @cli.group()
 def hypotheses():
     """Manage hypotheses."""
     pass
 
+# @sig 8e9fee06 | role: hypotheses_add | by: claude-code-993d23b6 | at: 2026-04-30T04:52:57Z
 @hypotheses.command("add")
 @click.argument("claim")
 @click.option("--prior", "-p", type=float, default=0.5, help="Prior probability")
@@ -121,8 +140,14 @@ def hypotheses_add(claim, prior):
     ensure_init(root)
     from perpetual.graph import Graph
     graph = Graph(root / "graph.db")
-    h = graph.add_hypothesis(claim=claim, prior=prior)
+    try:
+        h = graph.add_hypothesis(claim=claim, prior=prior)
+    except ValueError as e:
+        click.echo(str(e), err=True)
+        graph.close()
+        sys.exit(1)
     click.echo(f"Added {h['id']}: {h['claim']} (prior={h['prior']})")
+    _sync_hypotheses_md(graph, root)
     graph.close()
 
 @hypotheses.command("list")
@@ -142,6 +167,7 @@ def hypotheses_list(status):
         click.echo("No hypotheses.")
     graph.close()
 
+# @sig 32709bba | role: hypotheses_update | by: claude-code-993d23b6 | at: 2026-04-30T04:53:21Z
 @hypotheses.command("update")
 @click.argument("hyp_id")
 @click.option("--prior", type=float, default=None)
@@ -160,10 +186,21 @@ def hypotheses_update(hyp_id, prior, confidence, status):
     if not kwargs:
         click.echo("Nothing to update.", err=True)
         return
-    graph.update_hypothesis(hyp_id, **kwargs)
+    try:
+        graph.update_hypothesis(hyp_id, **kwargs)
+    except KeyError:
+        click.echo(f"Hypothesis {hyp_id} not found.", err=True)
+        graph.close()
+        sys.exit(1)
+    except ValueError as e:
+        click.echo(str(e), err=True)
+        graph.close()
+        sys.exit(1)
     click.echo(f"Updated {hyp_id}")
+    _sync_hypotheses_md(graph, root)
     graph.close()
 
+# @sig 831a64d4 | role: propose | by: claude-code-993d23b6 | at: 2026-04-30T03:14:50Z
 @cli.command()
 @click.option("--hypothesis", "-h", "hyp_id", default=None, help="Target hypothesis")
 @click.option("--config", "-c", "config_json", default="{}", help="Config JSON")
@@ -174,7 +211,15 @@ def propose(hyp_id, config_json, notes):
     ensure_init(root)
     from perpetual.graph import Graph
     graph = Graph(root / "graph.db")
-    config = json.loads(config_json)
+    try:
+        config = json.loads(config_json)
+    except json.JSONDecodeError as e:
+        click.echo(f"Invalid JSON config: {e}", err=True)
+        sys.exit(1)
+    if hyp_id and not graph.get_hypothesis(hyp_id):
+        click.echo(f"Hypothesis {hyp_id} not found.", err=True)
+        graph.close()
+        sys.exit(1)
     exp = graph.add_experiment(hypothesis_id=hyp_id, config=config, notes=notes)
     click.echo(f"Proposed {exp['id']}")
     if hyp_id:
@@ -201,6 +246,7 @@ def approve(exp_id):
     click.echo(f"Approved {exp_id}")
     graph.close()
 
+# @sig 3273215c | role: run | by: claude-code-993d23b6 | at: 2026-04-30T03:14:55Z
 @cli.command()
 @click.argument("exp_id")
 @click.argument("command")
@@ -218,8 +264,8 @@ def run(exp_id, command, gpu):
     if not exp:
         click.echo(f"Experiment {exp_id} not found.", err=True)
         sys.exit(1)
-    if exp["status"] not in ("approved", "proposed"):
-        click.echo(f"Experiment {exp_id} is {exp['status']}, cannot run.", err=True)
+    if exp["status"] != "approved":
+        click.echo(f"Experiment {exp_id} is {exp['status']}, must be approved first.", err=True)
         sys.exit(1)
 
     gpu_devices = list(gpu) if gpu else None
@@ -228,6 +274,7 @@ def run(exp_id, command, gpu):
     click.echo(f"Launched {exp_id} (PID {result['pid']})")
     graph.close()
 
+# @sig e5c49c60 | role: kill | by: claude-code-993d23b6 | at: 2026-04-30T04:52:08Z
 @cli.command()
 @click.argument("exp_id")
 def kill(exp_id):
@@ -243,8 +290,11 @@ def kill(exp_id):
         click.echo(f"Killed {exp_id}")
     else:
         click.echo(f"Could not kill {exp_id} (not found or already dead).", err=True)
+        graph.close()
+        sys.exit(1)
     graph.close()
 
+# @sig 6dea8bc8 | role: scan | by: claude-code-993d23b6 | at: 2026-04-30T04:52:24Z
 @cli.command()
 def scan():
     """Scan runs for completion/crash/stale."""
@@ -266,10 +316,41 @@ def scan():
         exp = graph.get_experiment(r["exp_id"])
         if exp and exp["status"] == "running":
             if r["status"] == "done":
-                graph.update_experiment(r["exp_id"], status="done")
+                graph.update_experiment(r["exp_id"], status="done",
+                                        results=r.get("details", {}))
             elif r["status"] in ("crashed", "stale"):
-                graph.update_experiment(r["exp_id"], status="failed")
+                graph.update_experiment(r["exp_id"], status="failed",
+                                        results=r.get("details", {}))
+            # Log GPU-hours if the run finished (done or crashed)
+            if r["status"] in ("done", "crashed"):
+                _log_gpu_budget(graph, rm, r["exp_id"])
     graph.close()
+
+
+# @sig 6b6f23a0 | role: _log_gpu_budget | by: claude-code-993d23b6 | at: 2026-04-30T04:51:56Z
+def _log_gpu_budget(graph, rm, exp_id):
+    """Calculate and log GPU-hours for a completed run."""
+    # Skip if already logged
+    if graph.budget_by_experiment(exp_id) > 0:
+        return
+    run_data = rm.get_run(exp_id)
+    if not run_data:
+        return
+    # Get duration from done.json or crash.json
+    duration_s = 0.0
+    for key in ("done", "crash"):
+        marker = run_data.get(key, {})
+        if "duration_seconds" in marker:
+            duration_s = marker["duration_seconds"]
+            break
+    if duration_s <= 0:
+        return
+    # Count GPUs from config
+    config = run_data.get("config", {})
+    gpu_devices = config.get("gpu_devices")
+    gpu_count = len(gpu_devices) if gpu_devices else 1
+    gpu_hours = gpu_count * duration_s / 3600.0
+    graph.log_budget(exp_id, gpu_hours)
 
 @cli.command()
 def report():

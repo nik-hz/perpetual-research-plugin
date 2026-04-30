@@ -110,7 +110,7 @@ class RunManager:
     # Watchdog (runs in a daemon thread per experiment)
     # ------------------------------------------------------------------
 
-    # @sig ec522207 | role: _watchdog | by: claude-code-b7232740 | at: 2026-04-29T22:40:54Z
+    # @sig 80ae718c | role: _watchdog | by: claude-code-993d23b6 | at: 2026-04-30T04:51:35Z
     def _watchdog(self, exp_id, proc, run_dir, started_at, fout=None, ferr=None):
         # type: (str, subprocess.Popen, Path, str, ..., ...) -> None
         """Poll the process every *_HEARTBEAT_INTERVAL* seconds.
@@ -147,6 +147,7 @@ class RunManager:
                         _write_json(run_dir / "crash.json", {
                             "finished_at": finished_at,
                             "returncode": rc,
+                            "duration_seconds": duration,
                             "last_stderr": last_stderr,
                         })
 
@@ -179,7 +180,7 @@ class RunManager:
     # Scan
     # ------------------------------------------------------------------
 
-    # @sig 80afbbec | role: scan_runs | by: claude-code-b7232740 | at: 2026-04-29T22:45:36Z
+    # @sig e53fc4df | role: scan_runs | by: claude-code-993d23b6 | at: 2026-04-30T04:56:50Z
     def scan_runs(self):
         # type: () -> list[dict]
         """Return a status summary for every run directory."""
@@ -209,23 +210,28 @@ class RunManager:
 
                 if not proc_alive and pid:
                     # Process exited but watchdog didn't write a marker.
-                    # Check stderr for failure patterns to decide crash vs done.
+                    # Check stderr for failure patterns and stderr content
+                    # to decide crash vs done.
                     pattern = _scan_for_failures(
                         entry / "stdout.log", entry / "stderr.log"
                     )
-                    if pattern:
-                        last_stderr = _tail(entry / "stderr.log", 50)
+                    stderr_content = _tail(entry / "stderr.log", 50)
+                    finished_at = _now_iso()
+                    duration = _duration_seconds(started_at, finished_at) if started_at else 0.0
+                    if pattern or stderr_content.strip():
                         _write_json(entry / "crash.json", {
-                            "finished_at": _now_iso(),
+                            "finished_at": finished_at,
+                            "duration_seconds": duration,
                             "pattern": pattern,
-                            "last_stderr": last_stderr,
+                            "last_stderr": stderr_content,
                             "note": "detected by scan (watchdog missed exit)",
                         })
                         status = "crashed"
                         details = _read_json(entry / "crash.json") or {}
                     else:
                         _write_json(entry / "done.json", {
-                            "finished_at": _now_iso(),
+                            "finished_at": finished_at,
+                            "duration_seconds": duration,
                             "returncode": None,
                             "note": "detected by scan (watchdog missed exit)",
                         })
