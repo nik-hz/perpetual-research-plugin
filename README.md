@@ -31,11 +31,11 @@ That comment records *who* edited the function, *when*, and a content hash of th
 
 ## Quickstart
 
-Run this directly in the Claude Code terminal to activate sigil in your project — updates with `/plugin update sigil@nik-hz`:
+Run this directly in the Claude Code terminal to activate sigil in your project — updates with `/plugin update sigil@nik-hz-plugins`:
 
 ```text
-/plugin marketplace add nik-hz/sigil
-/plugin install sigil@nik-hz
+/plugin marketplace add nik-hz/claude-plugins
+/plugin install sigil@nik-hz-plugins-plugins
 ```
 
 That wires up the auto-stamping hook. For local development, optional CLI access (`sig drift`, `sig list`, etc.), and other install paths, see [Install](#install) below.
@@ -78,11 +78,11 @@ Sigil keeps track of more finegrained edits within the codebase to help agents n
 
 ### Options
 
-**A. From GitHub** — recommended for normal use. Survives machine moves; updates with `/plugin update sigil@nik-hz`.
+**A. From GitHub** — recommended for normal use. Survives machine moves; updates with `/plugin update sigil@nik-hz-plugins-plugins`.
 
 ```text
-/plugin marketplace add nik-hz/sigil
-/plugin install sigil@nik-hz
+/plugin marketplace add nik-hz/claude-plugins
+/plugin install sigil@nik-hz-plugins-plugins
 ```
 
 **B. From a local clone** — when you're hacking on the plugin itself.
@@ -93,7 +93,7 @@ git clone https://github.com/nik-hz/sigil ~/code/sigil
 
 ```text
 /plugin marketplace add ~/code/sigil
-/plugin install sigil@nik-hz
+/plugin install sigil@nik-hz-plugins
 ```
 
 **C. Per-session, no install** — fastest iteration loop. Plugin is active for that session only; code changes picked up next launch.
@@ -105,7 +105,7 @@ claude --plugin-dir /path/to/sigil
 ### Updating
 
 ```text
-/plugin update sigil@nik-hz
+/plugin update sigil@nik-hz-plugins
 ```
 
 This pulls the latest version from the GitHub marketplace. After updating, run `/reload-plugins` or start a new session for changes to take effect.
@@ -121,7 +121,7 @@ Local-clone changes are picked up on the next Claude Code session. For per-sessi
 ### Uninstalling
 
 ```text
-/plugin uninstall sigil@nik-hz
+/plugin uninstall sigil@nik-hz-plugins
 ```
 
 Optionally remove the marketplace registration too:
@@ -313,7 +313,7 @@ Full list: [SPEC.md §7](SPEC.md#7-limitations-and-non-goals).
 ## Troubleshooting
 
 **Plugin loads but hooks don't fire**
-Run `/reload-plugins` and check the output includes `2 hooks`. If not, verify the plugin is enabled: `/plugin` should show `sigil@nik-hz` as active. Check `.claude/settings.local.json` isn't overriding with `"sigil@nik-hz": false`.
+Run `/reload-plugins` and check the output includes `2 hooks`. If not, verify the plugin is enabled: `/plugin` should show `sigil@nik-hz-plugins` as active. Check `.claude/settings.local.json` isn't overriding with `"sigil@nik-hz-plugins": false`.
 
 **`sig` command not found**
 The hooks don't need `sig` on your PATH — they use the bundled binary. If you want to run `sig` from your shell, see [sig on your PATH](#sig-on-your-shell-path-optional).
