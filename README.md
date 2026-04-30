@@ -49,8 +49,8 @@ Requires Python 3.8+.
 ### Manual (development)
 
 ```bash
-git clone https://github.com/nik-hz/perpetual.git
-cd perpetual
+git clone https://github.com/nik-hz/perpetual-research-plugin.git
+cd perpetual-research-plugin
 pip install -e .
 ```
 
