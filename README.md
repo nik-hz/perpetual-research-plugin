@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Perpetual" width="100%">
+</p>
+
 # Perpetual
 
 An autonomous research agent that tracks hypotheses, proposes experiments, manages GPU runs, and maintains persistent memory — all from the command line.
