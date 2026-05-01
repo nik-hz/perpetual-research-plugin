@@ -1,8 +1,8 @@
 """SessionStart hook handler for Claude Code plugin system.
 
 Called when a Claude Code session starts.  Finds the nearest .perpetual/
-directory, loads research context (memory, runs, GPUs, budget), and prints
-a JSON blob to stdout in Claude Code hook format.
+directory, loads research context (memory, experiments, GPUs, budget), and
+prints a JSON blob to stdout in Claude Code hook format.
 
 All heavy imports are lazy so the hook returns instantly when .perpetual/
 is absent.
@@ -11,7 +11,6 @@ is absent.
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 from typing import Optional
 
@@ -34,7 +33,6 @@ def session_start_hook() -> None:
 
     from perpetual.graph import Graph
     from perpetual.memory import Memory
-    from perpetual.runs import RunManager
     from perpetual.gpu import query_gpus, gpu_summary
 
     parts = []  # type: list[str]
@@ -51,38 +49,6 @@ def session_start_hook() -> None:
         pass
 
     # ------------------------------------------------------------------
-    # Run status
-    # ------------------------------------------------------------------
-    try:
-        rm = RunManager(root / "runs")
-        runs = rm.scan_runs()
-        active = [r for r in runs if r["status"] in ("running", "stale")]
-        crashed = [r for r in runs if r["status"] == "crashed"]
-        done = [r for r in runs if r["status"] == "done"]
-
-        if active or crashed or done:
-            lines = ["## Run Status"]
-            if active:
-                lines.append(
-                    f"- {len(active)} active: "
-                    f"{', '.join(r['exp_id'] for r in active)}"
-                )
-            if crashed:
-                lines.append(
-                    f"- {len(crashed)} CRASHED: "
-                    f"{', '.join(r['exp_id'] for r in crashed)} "
-                    f"\u2190 investigate!"
-                )
-            if done:
-                lines.append(
-                    f"- {len(done)} completed since last session: "
-                    f"{', '.join(r['exp_id'] for r in done)}"
-                )
-            parts.append("\n".join(lines))
-    except Exception:
-        pass
-
-    # ------------------------------------------------------------------
     # GPU
     # ------------------------------------------------------------------
     try:
@@ -93,18 +59,16 @@ def session_start_hook() -> None:
         pass
 
     # ------------------------------------------------------------------
-    # Budget
+    # Budget + experiment summary
     # ------------------------------------------------------------------
     try:
         graph = Graph(root / "graph.db")
         total = graph.total_budget()
 
-        # Read budget limit from config
         config_path = root / "config.yaml"
         limit = 100.0
         if config_path.exists():
             import yaml
-
             cfg = yaml.safe_load(config_path.read_text()) or {}
             limit = cfg.get("budget_gpu_hours", 100.0)
 
@@ -115,7 +79,6 @@ def session_start_hook() -> None:
                 f"({total / limit * 100:.0f}%)"
             )
 
-        # Experiment summary
         exps = graph.list_experiments()
         if exps:
             by_status = {}  # type: dict[str, list]

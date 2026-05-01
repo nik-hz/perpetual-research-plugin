@@ -49,7 +49,6 @@ def init(project):
     Memory(root / "memory")
 
     # Dirs
-    (root / "runs").mkdir(exist_ok=True)
     (root / "reports").mkdir(exist_ok=True)
     (root / "procedures").mkdir(exist_ok=True)
     (root / "policies").mkdir(exist_ok=True)
@@ -60,6 +59,37 @@ def init(project):
 
     click.echo(f"Initialized .perpetual/ in {Path.cwd()}")
 
+@cli.command()
+@click.option("--confirm", is_flag=True, default=False, help="Confirm destructive reset")
+def reset(confirm):
+    """Wipe all experiments, hypotheses, and budget — keep memory and config."""
+    root = get_root()
+    ensure_init(root)
+
+    if not confirm:
+        click.echo(
+            "This will permanently delete all experiments, hypotheses, and budget logs.\n"
+            "Re-run with --confirm to proceed.",
+            err=True,
+        )
+        sys.exit(1)
+
+    db_path = root / "graph.db"
+    if db_path.exists():
+        db_path.unlink()
+        click.echo("Deleted graph.db")
+
+    # Re-initialise schema (empty DB)
+    from perpetual.graph import Graph
+    Graph(root / "graph.db").close()
+    click.echo("Re-created empty graph.db")
+
+    # Sync hypotheses.md so memory reflects the empty state
+    from perpetual.memory import Memory
+    mem = Memory(root / "memory")
+    mem.write("hypotheses.md", "# Hypotheses\n\n_No hypotheses yet._\n", "reset")
+    click.echo("Reset complete.")
+
 # @sig 95039710 | role: status | by: claude-code-b7232740 | at: 2026-04-29T22:11:32Z
 @cli.command()
 def status():
@@ -68,10 +98,8 @@ def status():
     ensure_init(root)
 
     from perpetual.graph import Graph
-    from perpetual.runs import RunManager
 
     graph = Graph(root / "graph.db")
-    rm = RunManager(root / "runs")
 
     # Experiments summary
     exps = graph.list_experiments()
@@ -91,13 +119,6 @@ def status():
     click.echo(f"\n## Hypotheses: {len(hyps)} total")
     for h in hyps:
         click.echo(f"  [{h['status']}] {h['id']}: {h['claim']}")
-
-    # Active runs
-    runs = rm.scan_runs()
-    active = [r for r in runs if r["status"] in ("running", "stale")]
-    click.echo(f"\n## Active Runs: {len(active)}")
-    for r in active:
-        click.echo(f"  {r['exp_id']}: {r['status']}")
 
     # Budget
     total = graph.total_budget()
@@ -230,7 +251,7 @@ def propose(hyp_id, config_json, notes):
 @cli.command()
 @click.argument("exp_id")
 def approve(exp_id):
-    """Approve an experiment for execution."""
+    """Approve a proposed experiment."""
     root = get_root()
     ensure_init(root)
     from perpetual.graph import Graph
@@ -241,116 +262,32 @@ def approve(exp_id):
         sys.exit(1)
     if exp["status"] != "proposed":
         click.echo(f"Experiment {exp_id} is {exp['status']}, not proposed.", err=True)
+        graph.close()
         sys.exit(1)
     graph.update_experiment(exp_id, status="approved")
     click.echo(f"Approved {exp_id}")
     graph.close()
 
-# @sig 3273215c | role: run | by: claude-code-993d23b6 | at: 2026-04-30T03:14:55Z
 @cli.command()
 @click.argument("exp_id")
-@click.argument("command")
-@click.option("--gpu", "-g", multiple=True, type=int, help="GPU device indices")
-def run(exp_id, command, gpu):
-    """Launch an approved experiment."""
+@click.argument("outcome", type=click.Choice(["done", "failed"]))
+@click.option("--notes", "-n", default="", help="Outcome notes")
+def complete(exp_id, outcome, notes):
+    """Mark an experiment done or failed."""
     root = get_root()
     ensure_init(root)
     from perpetual.graph import Graph
-    from perpetual.runs import RunManager
     graph = Graph(root / "graph.db")
-    rm = RunManager(root / "runs")
-
     exp = graph.get_experiment(exp_id)
     if not exp:
         click.echo(f"Experiment {exp_id} not found.", err=True)
         sys.exit(1)
-    if exp["status"] != "approved":
-        click.echo(f"Experiment {exp_id} is {exp['status']}, must be approved first.", err=True)
-        sys.exit(1)
-
-    gpu_devices = list(gpu) if gpu else None
-    result = rm.launch_run(exp_id, command, gpu_devices=gpu_devices)
-    graph.update_experiment(exp_id, status="running")
-    click.echo(f"Launched {exp_id} (PID {result['pid']})")
+    kwargs = {"status": outcome}
+    if notes:
+        kwargs["notes"] = notes
+    graph.update_experiment(exp_id, **kwargs)
+    click.echo(f"Marked {exp_id} as {outcome}")
     graph.close()
-
-# @sig e5c49c60 | role: kill | by: claude-code-993d23b6 | at: 2026-04-30T04:52:08Z
-@cli.command()
-@click.argument("exp_id")
-def kill(exp_id):
-    """Kill a running experiment."""
-    root = get_root()
-    ensure_init(root)
-    from perpetual.runs import RunManager
-    from perpetual.graph import Graph
-    rm = RunManager(root / "runs")
-    graph = Graph(root / "graph.db")
-    if rm.kill_run(exp_id):
-        graph.update_experiment(exp_id, status="failed")
-        click.echo(f"Killed {exp_id}")
-    else:
-        click.echo(f"Could not kill {exp_id} (not found or already dead).", err=True)
-        graph.close()
-        sys.exit(1)
-    graph.close()
-
-# @sig 6dea8bc8 | role: scan | by: claude-code-993d23b6 | at: 2026-04-30T04:52:24Z
-@cli.command()
-def scan():
-    """Scan runs for completion/crash/stale."""
-    root = get_root()
-    ensure_init(root)
-    from perpetual.runs import RunManager
-    from perpetual.graph import Graph
-    rm = RunManager(root / "runs")
-    graph = Graph(root / "graph.db")
-
-    runs = rm.scan_runs()
-    if not runs:
-        click.echo("No runs found.")
-        return
-
-    for r in runs:
-        click.echo(f"  {r['exp_id']}: {r['status']}")
-        # Sync status back to graph
-        exp = graph.get_experiment(r["exp_id"])
-        if exp and exp["status"] == "running":
-            if r["status"] == "done":
-                graph.update_experiment(r["exp_id"], status="done",
-                                        results=r.get("details", {}))
-            elif r["status"] in ("crashed", "stale"):
-                graph.update_experiment(r["exp_id"], status="failed",
-                                        results=r.get("details", {}))
-            # Log GPU-hours if the run finished (done or crashed)
-            if r["status"] in ("done", "crashed"):
-                _log_gpu_budget(graph, rm, r["exp_id"])
-    graph.close()
-
-
-# @sig 6b6f23a0 | role: _log_gpu_budget | by: claude-code-993d23b6 | at: 2026-04-30T04:51:56Z
-def _log_gpu_budget(graph, rm, exp_id):
-    """Calculate and log GPU-hours for a completed run."""
-    # Skip if already logged
-    if graph.budget_by_experiment(exp_id) > 0:
-        return
-    run_data = rm.get_run(exp_id)
-    if not run_data:
-        return
-    # Get duration from done.json or crash.json
-    duration_s = 0.0
-    for key in ("done", "crash"):
-        marker = run_data.get(key, {})
-        if "duration_seconds" in marker:
-            duration_s = marker["duration_seconds"]
-            break
-    if duration_s <= 0:
-        return
-    # Count GPUs from config
-    config = run_data.get("config", {})
-    gpu_devices = config.get("gpu_devices")
-    gpu_count = len(gpu_devices) if gpu_devices else 1
-    gpu_hours = gpu_count * duration_s / 3600.0
-    graph.log_budget(exp_id, gpu_hours)
 
 @cli.command()
 def report():
@@ -359,15 +296,13 @@ def report():
     ensure_init(root)
     from perpetual.graph import Graph
     from perpetual.memory import Memory
-    from perpetual.runs import RunManager
     from perpetual import gpu
     from perpetual.reports import generate_report, save_report
 
     graph = Graph(root / "graph.db")
     mem = Memory(root / "memory")
-    rm = RunManager(root / "runs")
 
-    text = generate_report(graph, mem, rm, gpu)
+    text = generate_report(graph, mem, gpu)
     path = save_report(text, root / "reports")
     click.echo(text)
     click.echo(f"\nSaved to {path}")
@@ -385,7 +320,6 @@ def budget():
     total = graph.total_budget()
     click.echo(f"Total GPU-hours: {total:.2f}")
 
-    # Per-experiment breakdown
     exps = graph.list_experiments()
     rows = []
     for e in exps:
@@ -394,6 +328,23 @@ def budget():
             rows.append((e["id"], f"{h:.2f}"))
     if rows:
         click.echo(tabulate(rows, headers=["Experiment", "GPU-hours"], tablefmt="pipe"))
+    graph.close()
+
+@cli.command()
+@click.argument("exp_id")
+@click.argument("gpu_hours", type=float)
+def log_budget(exp_id, gpu_hours):
+    """Manually log GPU-hours for a completed experiment."""
+    root = get_root()
+    ensure_init(root)
+    from perpetual.graph import Graph
+    graph = Graph(root / "graph.db")
+    if not graph.get_experiment(exp_id):
+        click.echo(f"Experiment {exp_id} not found.", err=True)
+        graph.close()
+        sys.exit(1)
+    graph.log_budget(exp_id, gpu_hours)
+    click.echo(f"Logged {gpu_hours:.2f} GPU-hours for {exp_id}")
     graph.close()
 
 @cli.command()
